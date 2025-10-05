@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Museo Avellaneda - Inicio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 font-sans text-gray-800 overflow-x-hidden">
+
+  <!-- NAVBAR -->
+  <nav class="bg-neutral-950 shadow-md py-6 sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="#" class="text-xl font-bold text-gray-100">Museo Avellaneda</a>
+      <div class="hidden md:flex space-x-6 text-gray-200">
+        <a href="#" class="hover:text-gray-300">Inicio</a>
+        <a href="#" class="hover:text-gray-300">Nuestra Historia</a>
+        <a href="#" class="hover:text-gray-300">Salas</a>
+        <a href="#" class="hover:text-gray-300">Visitas</a>
+        <a href="#" class="hover:text-gray-300">Contacto</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="relative w-full overflow-hidden shadow-lg">
+    <div class="flex overflow-x-scroll snap-x snap-mandatory scroll-smooth" style="height: 89vh;">
+      <!-- Imagen 1 -->
+      <div class="flex-shrink-0 w-full relative">
+        <img src="src/imagen-1.jpeg" alt="Imagen 1 del museo" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-white p-4 text-center">
+          <h1 class="text-4xl md:text-6xl font-bold mb-4">Bienvenidos al Museo Avellaneda</h1>
+          <p class="max-w-2xl mx-auto text-lg">Un espacio para conocer y valorar nuestra historia, cultura y tradiciones locales.</p>
+        </div>
+      </div>
+      <!-- Imagen 2 -->
+      <div class="flex-shrink-0 w-full relative">
+        <img src="src/imagen-2.jpeg" alt="Imagen 2 del museo" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-white p-4 text-center">
+          <h2 class="text-3xl md:text-5xl font-bold mb-4">Historia viva</h2>
+          <p class="max-w-2xl mx-auto text-lg">Cada objeto y fotografía cuenta algo sobre nuestra comunidad y su gente.</p>
+        </div>
+      </div>
+      <!-- Imagen 3 -->
+      <div class="flex-shrink-0 w-full relative">
+        <img src="src/imagen-3.jpeg" alt="Imagen 3 del museo" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-white p-4 text-center">
+          <h2 class="text-3xl md:text-5xl font-bold mb-4">Explora nuestras salas</h2>
+          <p class="max-w-2xl mx-auto text-lg">Te invitamos a recorrer las distintas colecciones y exposiciones temporales.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SOBRE EL MUSEO -->
+  <section class="container mx-auto py-16 px-4 bg-gray-50 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">Sobre Nosotros</h2>
+    <p class="text-lg text-gray-600 max-w-3xl mx-auto">El Museo Avellaneda es un espacio cultural abierto a toda la comunidad. Aquí se resguardan objetos, documentos y recuerdos que forman parte de nuestra identidad.</p>
+    <p class="text-lg text-gray-600 max-w-3xl mx-auto mt-4">Además de nuestras exposiciones permanentes, realizamos muestras temporales, actividades educativas y visitas guiadas para escuelas y familias.</p>
+  </section>
+
+  <!-- CATEGORÍAS / SALAS -->
+  <section class="max-w-6xl mx-auto py-12 px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div>
+      <h2 class="text-xl font-bold mb-4">Sala Histórica</h2>
+      <img src="src/imagen-2.jpeg" alt="Sala histórica" class="rounded-lg shadow mb-3">
+      <p class="text-gray-600">Objetos, documentos y fotografías que muestran la vida de nuestra ciudad y su gente.</p>
+    </div>
+    <div>
+      <h2 class="text-xl font-bold mb-4">Sala de Arte</h2>
+      <img src="src/imagen-3.jpeg" alt="Sala de arte" class="rounded-lg shadow mb-3">
+      <p class="text-gray-600">Pinturas, esculturas y obras realizadas por artistas locales y regionales.</p>
+    </div>
+    <div>
+      <h2 class="text-xl font-bold mb-4">Sala de Ciencias</h2>
+      <img src="src/imagen-1.jpeg" alt="Sala de ciencias" class="rounded-lg shadow mb-3">
+      <p class="text-gray-600">Muestras de ciencias naturales, fósiles y material educativo para estudiantes.</p>
+    </div>
+  </section>
+
+  <!-- UBICACIÓN -->
+  <section class="container mx-auto py-16 px-4 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-8">¿Dónde estamos?</h2>
+    <p class="max-w-2xl mx-auto text-gray-600 mb-6">El museo se encuentra en el corazón de Avellaneda, con fácil acceso para vecinos, estudiantes y turistas. Aquí podés ver nuestro plano:</p>
+    <div class="bg-white shadow-md rounded-lg overflow-hidden max-w-4xl mx-auto">
+      <img src="https://cdn.dribbble.com/userupload/13785232/file/original-b86d09264974386241cd4e194c5445e0.png" alt="Plano del Museo" class="w-full h-auto object-cover">
+    </div>
+  </section>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="bg-black border-t border-gray-800 py-12 px-8 md:px-16 relative z-20">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-400 text-sm">
+      <div>
+        <h4 class="text-white font-semibold mb-2">Museo Avellaneda</h4>
+        <p>Un espacio para aprender, valorar y compartir nuestra historia.</p>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-2">Enlaces</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-gray-200">Inicio</a></li>
+          <li><a href="#" class="hover:text-gray-200">Nuestra Historia</a></li>
+          <li><a href="#" class="hover:text-gray-200">Salas</a></li>
+          <li><a href="#" class="hover:text-gray-200">Visitas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-2">Contacto</h4>
+        <p>Email: museoavellaneda@gmail.com</p>
+        <p>Tel: +54 11 2345 6789</p>
+      </div>
+    </div>
+    <div class="mt-8 border-t border-gray-800 pt-6 text-center text-gray-500 text-xs">
+      © 2025 Museo Avellaneda. Todos los derechos reservados.
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,20 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Código del carrusel
-    const carouselContainer = document.getElementById('carousel-container');
-    const dots = document.querySelectorAll('.carousel-dot');
-    const totalSlides = dots.length;
-    const prevBtn = document.getElementById('prev-btn');
-    const nextBtn = document.getElementById('next-btn');
-    let currentIndex = 0;
-    let interval;
-
 
      // Móvil: Menú toggle
     const menuButton = document.getElementById('menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     const closeMenu = document.getElementById('close-menu');
     const overlay = document.getElementById('overlay');
-    const body = document.body; // Referencia al body del documento
+    const body = documenta.body; // Referencia al body del documento
 
     // Función para abrir el menú
     const openMobileMenu = () => {
@@ -49,67 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-    // Funciones del carrusel
-    function scrollToIndex(index) {
-        carouselContainer.scrollTo({
-            left: carouselContainer.offsetWidth * index,
-            behavior: 'smooth'
-        });
-        currentIndex = index;
-        updateDots();
-    }
 
-    function updateDots() {
-        dots.forEach((dot, index) => {
-            dot.classList.toggle('opacity-100', index === currentIndex);
-            dot.classList.toggle('opacity-50', index !== currentIndex);
-        });
-    }
+    // Animationes
+    
+    
 
-    // Flechas
-    prevBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-        scrollToIndex(currentIndex);
-        resetAutoScroll();
-    });
-
-    nextBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % totalSlides;
-        scrollToIndex(currentIndex);
-        resetAutoScroll();
-    });
-
-    // Dots manual
-    dots.forEach(dot => {
-        dot.addEventListener('click', (e) => {
-            const index = parseInt(e.target.dataset.index);
-            scrollToIndex(index);
-            resetAutoScroll();
-        });
-    });
-
-    // Scroll detecta slide visible
-    carouselContainer.addEventListener('scroll', () => {
-        const newIndex = Math.round(carouselContainer.scrollLeft / carouselContainer.offsetWidth);
-        if (newIndex !== currentIndex) {
-            currentIndex = newIndex;
-            updateDots();
-        }
-    });
-
-    // Auto scroll
-    function startAutoScroll() {
-        interval = setInterval(() => {
-            currentIndex = (currentIndex + 1) % totalSlides;
-            scrollToIndex(currentIndex);
-        }, 3000);
-    }
-
-    function resetAutoScroll() {
-        clearInterval(interval);
-        startAutoScroll();
-    }
-
-    // Iniciar
-    updateDots();
-    startAutoScroll();
+   

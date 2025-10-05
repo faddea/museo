@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Split Text GSAP — Museo</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <style>
+        .split-letter {
+            display: inline-block;
+            will-change: transform, opacity;
+            transform-origin: center center;
+            user-select: none;
+            cursor: pointer;
+            /* mostrar cursor sobre las letras */
+        }
+        
+        .space {
+            width: .45rem;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-900 text-slate-100 flex items-center justify-center min-h-screen">
+
+    <main class="w-full max-w-4xl px-6">
+        <section class="hero flex items-center justify-center h-[60vh]">
+            <div id="splitWrap" class="relative select-none p-8 rounded-2xl bg-gradient-to-r from-slate-800 via-slate-700 to-slate-800/60 shadow-2xl">
+
+                <h1 id="splitText" class="text-7xl font-extrabold tracking-tight text-center leading-tight">
+                    MUSEO
+                </h1>
+
+                <p class="mt-6 text-center text-sm text-slate-400">Pasá el mouse sobre cualquier letra</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Dividir texto en spans
+        const wrapTextInSpans = (node) => {
+            const text = node.textContent;
+            node.innerHTML = '';
+            for (const ch of text) {
+                if (ch === ' ') {
+                    const s = document.createElement('span');
+                    s.className = 'space';
+                    s.innerHTML = '&nbsp;';
+                    node.appendChild(s);
+                } else {
+                    const span = document.createElement('span');
+                    span.className = 'split-letter';
+                    span.textContent = ch;
+                    node.appendChild(span);
+                }
+            }
+            return Array.from(node.querySelectorAll('.split-letter'));
+        };
+
+        const textNode = document.getElementById('splitText');
+        const letters = wrapTextInSpans(textNode);
+
+        // Animación de todas las letras
+        function scatter() {
+            gsap.to(letters, {
+                duration: 1,
+                x: () => gsap.utils.random(-120, 120),
+                y: () => gsap.utils.random(-100, 100),
+                rotation: () => gsap.utils.random(-45, 45),
+                scale: () => gsap.utils.random(0.7, 1.3),
+                ease: "expo.out",
+                stagger: 0.02
+            });
+        }
+
+        function restore() {
+            gsap.to(letters, {
+                duration: 0.8,
+                x: 0,
+                y: 0,
+                rotation: 0,
+                scale: 1,
+                ease: "power3.out",
+                stagger: 0.02
+            });
+        }
+
+        // Cada letra dispara la animación cuando entra el mouse
+        letters.forEach(letter => {
+            letter.addEventListener('mouseenter', scatter);
+            letter.addEventListener('mouseleave', restore);
+        });
+
+        // Animación de entrada inicial
+        gsap.from(letters, {
+            duration: 0.9,
+            y: 30,
+            opacity: 0,
+            ease: "power2.out",
+            stagger: 0.03
+        });
+    </script>
+</body>
+
+</html>

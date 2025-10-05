@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Museo Avellaneda - Inicio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-      <!-- GSAP -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
     <style>
         .carousel-item {
             scroll-snap-align: center;
@@ -19,298 +19,477 @@
         .carousel-container::-webkit-scrollbar {
             display: none;
         }
-
-/* Ancho de la barra */
-::-webkit-scrollbar {
-  width: 14px;
-}
-
-/* Fondo de la barra */
-::-webkit-scrollbar-track {
-  background: #5f5f5f;
-}
-
-/* "Pulgarcito" (la parte que se mueve) */
-::-webkit-scrollbar-thumb {
-  background: #1f1f1f;
-  border-radius: none;
-}
-
-/* Hover en el pulgarcito */
-::-webkit-scrollbar-thumb:hover {
-  background: #0c0c0c;
-  border-radius: 10px;
-}
-
-
+        /* Ancho de la barra */
+        
+         ::-webkit-scrollbar {
+            width: 14px;
+        }
+        /* Fondo de la barra */
+        
+         ::-webkit-scrollbar-track {
+            background: #5f5f5f;
+        }
+        /* "Pulgarcito" (la parte que se mueve) */
+        
+         ::-webkit-scrollbar-thumb {
+            background: #1f1f1f;
+            border-radius: none;
+        }
+        /* Hover en el pulgarcito */
+        
+         ::-webkit-scrollbar-thumb:hover {
+            background: #0c0c0c;
+            border-radius: 10px;
+        }
+        
+        .carousel-item {
+            scroll-snap-align: center;
+            flex-shrink: 0;
+            width: 100%;
+        }
+        
+        .carousel-container::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .split-letter {
+            display: inline-block;
+            will-change: transform, opacity;
+            transform-origin: center center;
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        .space {
+            width: 0.45rem;
+            display: inline-block;
+        }
     </style>
 </head>
 
 <body class="bg-gray-100 font-sans text-gray-800 overflow-x-hidden">
 
-  <!-- NAVBAR -->
-  <nav class="bg-neutral-950 shadow-md py-6 sticky top-0 z-50">
-  <div class="container mx-auto flex justify-between items-center">
-    <a href="#" class="text-xl font-bold text-gray-100">Museo Avellaneda</a>
-      <!-- Menú en desktop -->
-      <div class="hidden md:flex space-x-6 text-gray-200">
-      <a href="#" class="hover:text-gray-300">Inicio</a>
-      <a href="#" class="hover:text-gray-300">Exposiciones</a>
-      <a href="#" class="hover:text-gray-300">Colección</a>
-      <a href="#" class="hover:text-gray-300">Visítanos</a>
-      <a href="#" class="hover:text-gray-300">Contacto</a>
-    </div>
-      <!-- Botón menú hamburguesa solo en móviles -->
-      <button id="menu-button" class="md:hidden focus:outline-none">
+    <!-- NAVBAR -->
+    <nav class="bg-neutral-950 shadow-md py-6 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-gray-100">Museo Avellaneda</a>
+            <!-- Menú en desktop -->
+            <div class="hidden md:flex space-x-6 text-gray-200">
+                <a href="#" class="hover:text-gray-300">Inicio</a>
+                <a href="#" class="hover:text-gray-300">Exposiciones</a>
+                <a href="#" class="hover:text-gray-300">Colección</a>
+                <a href="#" class="hover:text-gray-300">Visítanos</a>
+                <a href="#" class="hover:text-gray-300">Contacto</a>
+            </div>
+            <!-- Botón menú hamburguesa solo en móviles -->
+            <button id="menu-button" class="md:hidden focus:outline-none">
       <svg class="text-gray-100 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
       </svg>
     </button>
-  </div>
-  </nav>
+        </div>
+    </nav>
 
     <!-- Menú lateral SOLO móviles -->
-    <div id="mobile-menu"
-  class="fixed top-0 right-0 h-full w-64 bg-neutral-950 shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50 md:hidden">
-  <button id="close-menu" class="absolute top-4 right-4 text-gray-100 text-2xl">&times;</button>
-  <nav class="flex flex-col mt-16 space-y-4 text-center">
-    <a href="#" class="py-2 text-gray-50 hover:bg-neutral-900 hover:text-gray-100">Inicio</a>
-    <a href="#" class="py-2 text-gray-50 hover:bg-neutral-900 hover:text-gray-100">Exposiciones</a>
-    <a href="#" class="py-2 text-gray-50 hover:bg-neutral-900 hover:text-gray-100">Colección</a>
-    <a href="#" class="py-2 text-gray-50 hover:bg-neutral-900 hover:text-gray-100">Visítanos</a>
-    <a href="#" class="py-2 text-gray-50 hover:bg-neutral-900 hover:text-gray-100">Contacto</a>
-  </nav>
-</div>
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-neutral-950 shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50 md:hidden">
+        <button id="close-menu" class="absolute top-4 right-4 text-gray-100 text-2xl">&times;</button>
+        <nav class="flex flex-col mt-16 space-y-4 text-center">
+            <a href="#" class="py-2 text-gray-50 hover:bg-neutral-900 hover:text-gray-100">Inicio</a>
+            <a href="#" class="py-2 text-gray-50 hover:bg-neutral-900 hover:text-gray-100">Exposiciones</a>
+            <a href="#" class="py-2 text-gray-50 hover:bg-neutral-900 hover:text-gray-100">Colección</a>
+            <a href="#" class="py-2 text-gray-50 hover:bg-neutral-900 hover:text-gray-100">Visítanos</a>
+            <a href="#" class="py-2 text-gray-50 hover:bg-neutral-900 hover:text-gray-100">Contacto</a>
+        </nav>
+    </div>
 
-  <!-- Overlay -->
- <div id="overlay" class="fixed inset-0 bg-black bg-opacity-80 hidden z-40 md:hidden"></div>
+    <!-- Overlay -->
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-80 hidden z-40 md:hidden"></div>
 
-  <!-- HEADER -->
-  <header class="relative w-full overflow-hidden shadow-lg">
-    <div id="carousel-container"
-      class="carousel-container flex overflow-x-scroll snap-x snap-mandatory scroll-smooth" style="height: 89vh;">
-      <div class="carousel-item flex-shrink-0 w-full relative">
-        <img src="src/imagen-1.jpeg" alt="Imagen 1 del museo" class="w-full h-full object-cover">
-        <div
-          class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-white p-4 text-center">
-          <h1 class="text-4xl md:text-6xl font-bold mb-4">Bienvenidos al Museo Avellaneda</h1>
-          <p class="text-center max-w-3xl mx-auto text-gray-100 text-lg px-4">
-            Descubre la riqueza cultural y la historia que el Museo Avellaneda tiene para ofrecer. Sumérgete en
-            exposiciones únicas y colecciones que te conectan con el pasado y el presente.
-          </p>
-                </div>
-            </div>
-            <div class="carousel-item flex-shrink-0 w-full relative">
-                <img src="src/imagen-2.jpeg" alt="Imagen 2 del museo" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-white p-4 text-center">
-                    <h2 class="text-3xl md:text-5xl font-bold mb-4">Descubre nuestra rica historia</h2>
-                    <p class="text-center max-w-3xl mx-auto text-gray-100 text-lg px-4">
-                        Descubre la riqueza cultural y la historia que el Museo Avellaneda tiene para ofrecer. Sumérgete en exposiciones únicas y colecciones que te conectan con el pasado y el presente.
-                    </p>
-                </div>
-            </div>
-            <div class="carousel-item flex-shrink-0 w-full relative">
-                <img src="src/imagen-3.jpeg" alt="Imagen 3 del museo" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-white p-4 text-center">
-                    <h2 class="text-3xl md:text-5xl font-bold mb-4">Explora nuestras colecciones</h2>
-                    <p class="text-center max-w-3xl mx-auto text-gray-100 text-lg px-4">
-                        Descubre la riqueza cultural y la historia que el Museo Avellaneda tiene para ofrecer. Sumérgete en exposiciones únicas y colecciones que te conectan con el pasado y el presente.
-                    </p>
-                </div>
+    <!-- HEADER -->
+    <header class="relative w-full overflow-hidden shadow-lg">
+    <div id="carousel-container" 
+         class="carousel-container flex overflow-x-hidden snap-x snap-mandatory" 
+         style="height: 89vh;">
+        
+        <div class="carousel-item flex-shrink-0 w-screen relative">
+            <img src="src/imagen-1.jpeg" alt="Imagen 1 del museo" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-white p-4 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Bienvenidos al Museo Avellaneda</h1>
+                <p class="text-center max-w-3xl mx-auto text-gray-100 text-lg px-4">
+                    Descubre la riqueza cultural y la historia que el Museo Avellaneda tiene para ofrecer. Sumérgete en exposiciones únicas y colecciones que te conectan con el pasado y el presente.
+                </p>
             </div>
         </div>
 
-        <!-- Flechas del carrusel -->
-        <button id="prev-btn" class="absolute top-1/2 left-4 -translate-y-1/2 text-white text-4xl bg-black bg-opacity-30 hover:bg-opacity-60 rounded-full p-2 cursor-pointer select-none z-10">
-          &#10094;
-        </button>
-        <button id="next-btn" class="absolute top-1/2 right-4 -translate-y-1/2 text-white text-4xl bg-black bg-opacity-30 hover:bg-opacity-60 rounded-full p-2 cursor-pointer select-none z-10">
-          &#10095;
-        </button>
-
-        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-            <button class="carousel-dot w-3 h-3 bg-white rounded-full opacity-50 hover:opacity-100 transition-opacity" data-index="0"></button>
-            <button class="carousel-dot w-3 h-3 bg-white rounded-full opacity-50 hover:opacity-100 transition-opacity" data-index="1"></button>
-            <button class="carousel-dot w-3 h-3 bg-white rounded-full opacity-50 hover:opacity-100 transition-opacity" data-index="2"></button>
+        <div class="carousel-item flex-shrink-0 w-screen relative">
+            <img src="src/imagen-2.jpeg" alt="Imagen 2 del museo" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-white p-4 text-center">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Descubre nuestra rica historia</h2>
+                <p class="text-center max-w-3xl mx-auto text-gray-100 text-lg px-4">
+                    Descubre la riqueza cultural y la historia que el Museo Avellaneda tiene para ofrecer. Sumérgete en exposiciones únicas y colecciones que te conectan con el pasado y el presente.
+                </p>
+            </div>
         </div>
-    </header>
+
+        <div class="carousel-item flex-shrink-0 w-screen relative">
+            <img src="src/imagen-3.jpeg" alt="Imagen 3 del museo" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-white p-4 text-center">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Explora nuestras colecciones</h2>
+                <p class="text-center max-w-3xl mx-auto text-gray-100 text-lg px-4">
+                    Descubre la riqueza cultural y la historia que el Museo Avellaneda tiene para ofrecer. Sumérgete en exposiciones únicas y colecciones que te conectan con el pasado y el presente.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dots -->
+    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        <button class="carousel-dot w-3 h-3 bg-white rounded-full opacity-50 hover:opacity-100 transition-opacity" data-index="0"></button>
+        <button class="carousel-dot w-3 h-3 bg-white rounded-full opacity-50 hover:opacity-100 transition-opacity" data-index="1"></button>
+        <button class="carousel-dot w-3 h-3 bg-white rounded-full opacity-50 hover:opacity-100 transition-opacity" data-index="2"></button>
+    </div>
+</header>
 
 
 
 
     <section class="container mx-auto py-16 px-4 fade-section bg-gray-50">
-  <div class="text-center max-w-3xl mx-auto">
-    <h2 class="fade-up text-3xl md:text-4xl font-bold mb-4">Sobre el Museo</h2>
-    <p class="fade-up text-lg leading-relaxed text-gray-600">
-      El Museo de Avellaneda es un centro cultural dedicado a la preservación y difusión del patrimonio histórico, artístico y científico de la región. Desde nuestra fundación, nos hemos comprometido a ser un espacio de encuentro, aprendizaje y reflexión para
+        <div class="text-center max-w-3xl mx-auto">
+            <h2 class="fade-up text-3xl md:text-4xl font-bold mb-4">Sobre el Museo</h2>
+            <p class="fade-up text-lg leading-relaxed text-gray-600">
+                El Museo de Avellaneda es un centro cultural dedicado a la preservación y difusión del patrimonio histórico, artístico y científico de la región. Desde nuestra fundación, nos hemos comprometido a ser un espacio de encuentro, aprendizaje y reflexión para
                 toda la comunidad.
-    </p>
-    <p class="fade-up text-lg leading-relaxed text-gray-600 mt-4">
-      Nuestras exposiciones permanentes y temporales ofrecen un viaje a través de los siglos, destacando los momentos clave que han moldeado nuestra identidad. Te invitamos a explorar nuestras salas y a sumergirte en las historias que definen a Avellaneda.
-    </p>
-  </div>
-</section>
+            </p>
+            <p class="fade-up text-lg leading-relaxed text-gray-600 mt-4">
+                Nuestras exposiciones permanentes y temporales ofrecen un viaje a través de los siglos, destacando los momentos clave que han moldeado nuestra identidad. Te invitamos a explorar nuestras salas y a sumergirte en las historias que definen a Avellaneda.
+            </p>
+        </div>
+        <div class="py-6 max-w-md mx-auto">
+            <!-- Card -->
+            <div class="relative bg-black rounded-2xl border border-white overflow-hidden group shadow-lg">
+                <!-- Imagen abajo -->
+                <div class="overflow-hidden">
+                    <img src="src/imagen-1.jpeg" alt="Imagen" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500">
+                </div>
 
-<section class="container mx-auto py-16 px-4 md:px-16 lg:px-32 fade-section">
-  <div class="flex flex-col md:flex-row items-center md:items-center justify-center gap-8 max-w-6xl mx-auto">
-    <!-- Texto -->
-    <div class="md:w-1/2 text-center md:text-left fade-left">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Nuestro espacio</h2>
-      <p class="text-lg leading-relaxed text-gray-600 mb-4">
-        El Museo de Avellaneda es un centro cultural dedicado a la preservación y difusión del patrimonio histórico, artístico y científico de la región. Desde nuestra fundación, nos hemos comprometido a ser un espacio de encuentro, aprendizaje y reflexión para
-                    toda la comunidad.
-      </p>
-      <p class="text-lg leading-relaxed text-gray-600">
-         Nuestras exposiciones permanentes y temporales ofrecen un viaje a través de los siglos, destacando los momentos clave que han moldeado nuestra identidad. Te invitamos a explorar nuestras salas y a sumergirte en las historias que definen a Avellaneda.
-      </p>
-    </div>
-
-    <!-- Imagen -->
-    <div class="md:w-1/2 flex justify-center fade-right">
-      <img src="src/se1.jpeg" alt="Museo de Avellaneda" class="w-full max-w-sm rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-500">
-    </div>
-  </div>
-</section>
-
-    <section class="container mx-auto py-16 px-4 md:px-16 lg:px-32">
-        <div class="flex flex-col md:flex-row items-center justify-center gap-12 max-w-6xl mx-auto">
-
-            <!-- Imagen primero en móvil -->
-            <div class="w-full md:w-1/2 flex justify-center">
-                <img src="src/se2.jpeg" alt="Museo de Avellaneda" class="w-full max-w-sm rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-500 fade-left">
+                <!-- Link en esquina inferior izquierda -->
+                <a href="https://ejemplo.com" class="absolute bottom-3 left-3 text-white bg-black/70 px-3 py-1 rounded-lg text-sm hover:bg-white hover:text-black transition">
+        Ver más
+      </a>
             </div>
-
-            <!-- Texto -->
-            <div class="w-full md:w-1/2 text-center md:text-left px-2 sm:px-4 fade-right">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Nuestro espacio</h2>
-                <p class="text-base sm:text-lg leading-relaxed text-gray-600 mb-4">
-                    El Museo de Avellaneda es un centro cultural dedicado a la preservación y difusión del patrimonio histórico, artístico y científico de la región. Desde nuestra fundación, nos hemos comprometido a ser un espacio de encuentro, aprendizaje y reflexión para
-                    toda la comunidad.
-                </p>
-                <p class="text-base sm:text-lg leading-relaxed text-gray-600">
-                    Nuestras exposiciones permanentes y temporales ofrecen un viaje a través de los siglos, destacando los momentos clave que han moldeado nuestra identidad. Te invitamos a explorar nuestras salas y a sumergirte en las historias que definen a Avellaneda.
-                </p>
-            </div>
-
         </div>
     </section>
 
-
-    <section class="container mx-auto py-16 px-4 md:px-16 lg:px-32">
-        <div class="flex flex-col md:flex-row items-center md:items-center justify-center gap-8 max-w-6xl mx-auto">
-
-            <!-- Texto -->
-            <div class="md:w-1/2 text-center md:text-left fade-left">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Nuestra historia</h2>
-                <p class="text-lg leading-relaxed text-gray-600 mb-4">
-                    El Museo de Avellaneda es un centro cultural dedicado a la preservación y difusión del patrimonio histórico, artístico y científico de la región. Desde nuestra fundación, nos hemos comprometido a ser un espacio de encuentro, aprendizaje y reflexión para
-                    toda la comunidad.
-                </p>
-                <p class="text-lg leading-relaxed text-gray-600">
-                    Nuestras exposiciones permanentes y temporales ofrecen un viaje a través de los siglos, destacando los momentos clave que han moldeado nuestra identidad. Te invitamos a explorar nuestras salas y a sumergirte en las historias que definen a Avellaneda.
-                </p>
-            </div>
-
-            <!-- Imagen -->
-            <div class="md:w-1/2 flex justify-center">
-                <img src="src/se3.jpeg" alt="Museo de Avellaneda" class="w-full max-w-sm rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-500 fade-right">
-            </div>
-
+    <!-- SECCIÓN: Categorías Técnicas -->
+<section class="max-w-6xl mx-auto py-12 px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <!-- Electrónica -->
+    <div>
+        <h2 class="text-xl font-bold mb-4">Electrónica</h2>
+        <div class="space-y-3">
+            <img src="src/imagen-3.jpeg" alt="Electrónica" class="rounded-lg shadow">
+            <ul class="space-y-1">
+                <li>Proyectos de circuitos</li>
+                <li>Robótica básica</li>
+                <li>Arduino y microcontroladores</li>
+            </ul>
         </div>
-    </section>
+    </div>
+    <!-- Informática -->
+    <div>
+        <h2 class="text-xl font-bold mb-4">Informática</h2>
+        <div class="space-y-3">
+            <img src="src/imagen-2.jpeg" alt="Informática" class="rounded-lg shadow">
+            <ul class="space-y-1">
+                <li>Redes y servidores</li>
+                <li>Aplicaciones escolares</li>
+                <li>Bases de datos</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Mecánica -->
+    <div>
+        <h2 class="text-xl font-bold mb-4">Mecánica</h2>
+        <div class="space-y-3">
+            <img src="src/imagen-1.jpeg" alt="Mecánica" class="rounded-lg shadow">
+            <ul class="space-y-1">
+                <li>Maquinarias</li>
+                <li>Planos y diseños</li>
+                <li>Prototipos de taller</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+    <!-- SECCIÓN: Bienvenida -->
+<section class="max-w-6xl mx-auto py-16 px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div>
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">Bienvenidos al Museo Técnico Escolar</h2>
+        <p class="text-gray-700 mb-6">
+            Este espacio digital reúne los proyectos más destacados de los estudiantes en las áreas de 
+            informática, electrónica y mecánica, mostrando la creatividad, innovación y esfuerzo que caracterizan 
+            a nuestra escuela técnica.
+        </p>
+        <a href="#" class="inline-block border border-gray-900 px-4 py-2 rounded-md hover:bg-gray-900 hover:text-white">
+            Conocer Más →
+        </a>
+    </div>
+    <div>
+        <img src="src/se3.jpeg" alt="Escuela Técnica" class="rounded-lg shadow">
+    </div>
+</section>
 
     <section class="container mx-auto py-16 px-4 text-center">
-        <h2 class="fade-up text-3xl md:text-4xl font-bold mb-8">Ubicación y Plano</h2>
-        <div class="fade-up bg-white shadow-md rounded-lg overflow-hidden max-w-4xl mx-auto">
-            <img src="https://via.placeholder.com/1000x600?text=Plano+del+Museo" alt="Plano del Museo" class="w-full h-auto object-cover">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8">Ubicación y Plano</h2>
+        <div class="bg-white shadow-md rounded-lg overflow-hidden max-w-4xl mx-auto">
+            <img src="https://cdn.dribbble.com/userupload/13785232/file/original-b86d09264974386241cd4e194c5445e0.png" alt="Plano del Museo" class="w-full h-auto object-cover">
         </div>
     </section>
 
-    <footer class="bg-black text-white py-8">
-        <div class="container mx-auto text-center px-4">
-            <div class="mb-4">
-                <a href="#" class="mx-2 hover:text-gray-400">Inicio</a>
-                <a href="#" class="mx-2 hover:text-gray-400">Exposiciones</a>
-                <a href="#" class="mx-2 hover:text-gray-400">Contacto</a>
-            </div>
-            <p class="text-gray-500">&copy; 2025 Museo Avellaneda. Todos los derechos reservados.</p>
+    <!-- SECCIÓN: Colección -->
+<section class="max-w-6xl mx-auto py-16 px-6">
+    <div class="flex justify-between items-center mb-8">
+        <h2 class="text-2xl md:text-3xl font-bold">Proyectos Destacados</h2>
+        <a href="#" class="text-gray-700 hover:underline">Ver Todos →</a>
+    </div>
+    <p class="text-gray-600 mb-8">
+        Aquí se exponen proyectos realizados por los alumnos, desde diseños mecánicos y sistemas electrónicos 
+        hasta aplicaciones y programas de informática.
+    </p>
+
+    <!-- Grid de proyectos -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div>
+            <img src="src/imagen-1.jpeg" alt="Proyecto 1" class="rounded-lg shadow mb-3">
+            <h3 class="font-semibold">Robot Seguidor de Línea</h3>
+            <p class="text-sm text-gray-600">Electrónica (2024)</p>
         </div>
-    </footer>
+        <div>
+            <img src="src/imagen-2.jpeg" alt="Proyecto 2" class="rounded-lg shadow mb-3">
+            <h3 class="font-semibold">Aplicación de Gestión Escolar</h3>
+            <p class="text-sm text-gray-600">Informática (2023)</p>
+        </div>
+        <div>
+            <img src="src/imagen-3.jpeg" alt="Proyecto 3" class="rounded-lg shadow mb-3">
+            <h3 class="font-semibold">Motor Didáctico</h3>
+            <p class="text-sm text-gray-600">Mecánica (2022)</p>
+        </div>
+        <div>
+            <img src="src/imagen-1.jpeg" alt="Proyecto 4" class="rounded-lg shadow mb-3">
+            <h3 class="font-semibold">Impresora 3D Artesanal</h3>
+            <p class="text-sm text-gray-600">Electrónica & Informática (2023)</p>
+        </div>
+    </div>
 
-          <!-- GSAP Animaciones -->
-  <script>
-    gsap.registerPlugin(ScrollTrigger);
+    <div class="text-center mt-12">
+        <a href="#" class="inline-block bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800">
+            Cargar Más
+        </a>
+    </div>
+</section>
 
-    // Navbar aparece desde arriba
-    gsap.from("nav", { y: -80, opacity: 0, duration: 1, ease: "power3.out" });
 
-    // Header textos
-    gsap.from("header h1, header h2, header p", {
-      opacity: 0,
-      y: 50,
-      duration: 1,
-      stagger: 0.3,
-      delay: 0.5
-    });
 
-    // Secciones fade in
-    gsap.utils.toArray(".fade-section").forEach(section => {
-      gsap.from(section, {
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        scrollTrigger: {
-          trigger: section,
-          start: "top 85%",
+    <footer class="bg-black border-t border-gray-800 py-12 px-8 md:px-16 relative z-20">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Identidad -->
+        <div>
+            <div class="text-2xl font-bold text-white mb-4">
+                Museo<span id="animated-span" class="text-sky-500">Técnico</span>
+            </div>
+            <p class="text-gray-400 text-sm">
+                Espacio digital de la Escuela Técnica Avellaneda para mostrar proyectos,
+                innovación y el trabajo de nuestros estudiantes.
+            </p>
+        </div>
+
+        <!-- Enlaces rápidos -->
+        <div>
+            <h4 class="text-white font-semibold mb-4">Secciones</h4>
+            <ul class="space-y-2 text-gray-400 text-sm">
+                <li><a href="#categorias" class="hover:text-sky-400">Categorías</a></li>
+                <li><a href="#coleccion" class="hover:text-sky-400">Colección</a></li>
+                <li><a href="#ubicacion" class="hover:text-sky-400">Ubicación</a></li>
+            </ul>
+        </div>
+
+        <!-- Información -->
+        <div>
+            <h4 class="text-white font-semibold mb-4">Institución</h4>
+            <ul class="space-y-2 text-gray-400 text-sm">
+                <li><a href="#" class="hover:text-sky-400">Sobre el Museo</a></li>
+                <li><a href="#" class="hover:text-sky-400">Nuestra Escuela</a></li>
+                <li><a href="#" class="hover:text-sky-400">Contacto</a></li>
+            </ul>
+        </div>
+
+        <!-- Contacto -->
+        <div>
+            <h4 class="text-white font-semibold mb-4">Contacto</h4>
+            <p class="text-gray-400 text-sm">EETP N°478 "Dr. Nicolás Avellaneda"</p>
+            <p class="text-gray-400 text-sm">Av. Principal 1234, Rosario, Santa Fe</p>
+            <p class="text-gray-400 text-sm">escuela478@museotecnico.edu.ar</p>
+            <p class="text-gray-400 text-sm">+54 (341) 123-4567</p>
+        </div>
+    </div>
+
+    <div class="mt-12 border-t border-gray-800 pt-6 text-center text-gray-500 text-sm">
+        © 2025 Museo Técnico Escolar Avellaneda. Todos los derechos reservados.
+    </div>
+</footer>
+
+    <!-- GSAP Animaciones -->
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Navbar aparece desde arriba
+        gsap.from("nav", {
+            y: -80,
+            opacity: 0,
+            duration: 1,
+            ease: "power3.out"
+        });
+
+        // Header textos
+        gsap.from("header h1, header h2, header p", {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            stagger: 0.3,
+            delay: 0.5
+        });
+
+        // Secciones fade in
+        gsap.utils.toArray(".fade-section").forEach(section => {
+            gsap.from(section, {
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 85%",
+                }
+            });
+        });
+
+        // Fade-Up (títulos y párrafos)
+        gsap.utils.toArray(".fade-up").forEach(el => {
+            gsap.from(el, {
+                opacity: 0,
+                y: 40,
+                duration: 1,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: el,
+                    start: "top 85%"
+                }
+            });
+        });
+
+        // Fade desde la izquierda (bloques de texto)
+        gsap.utils.toArray(".fade-left").forEach(el => {
+            gsap.from(el, {
+                opacity: 0,
+                x: -60,
+                duration: 1,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: el,
+                    start: "top 80%"
+                }
+            });
+        });
+
+        // Fade desde la derecha (imágenes)
+        gsap.utils.toArray(".fade-right").forEach(el => {
+            gsap.from(el, {
+                opacity: 0,
+                x: 60,
+                duration: 1,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: el,
+                    start: "top 80%"
+                }
+            });
+        });
+
+
+
+
+
+
+        // Función para separar cada letra en un span
+        const wrapTextInSpans = (node) => {
+            const text = node.textContent;
+            node.innerHTML = '';
+            const letters = [];
+            for (const ch of text) {
+                if (ch === ' ') {
+                    const s = document.createElement('span');
+                    s.className = 'space';
+                    s.innerHTML = '&nbsp;';
+                    node.appendChild(s);
+                } else {
+                    const span = document.createElement('span');
+                    span.className = 'split-letter';
+                    span.textContent = ch;
+                    node.appendChild(span);
+                    letters.push(span);
+                }
+            }
+            return letters;
+        };
+
+        // Tomamos el elemento
+        const animatedSpan = document.getElementById('animated-span');
+        const letters = wrapTextInSpans(animatedSpan);
+
+        // Animación de "scatter" al pasar el mouse sobre cualquier letra
+        function scatter() {
+            gsap.to(letters, {
+                duration: 1,
+                x: () => gsap.utils.random(-50, 50),
+                y: () => gsap.utils.random(-50, 50),
+                rotation: () => gsap.utils.random(-45, 45),
+                scale: () => gsap.utils.random(0.7, 1.3),
+                ease: "expo.out",
+                stagger: 0.02
+            });
         }
-      });
-    });
 
-    // Fade-Up (títulos y párrafos)
-  gsap.utils.toArray(".fade-up").forEach(el => {
-    gsap.from(el, {
-      opacity: 0,
-      y: 40,
-      duration: 1,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: el,
-        start: "top 85%"
-      }
-    });
-  });
+        // Volver a posición original
+        function restore() {
+            gsap.to(letters, {
+                duration: 0.8,
+                x: 0,
+                y: 0,
+                rotation: 0,
+                scale: 1,
+                ease: "power3.out",
+                stagger: 0.02
+            });
+        }
 
-  // Fade desde la izquierda (bloques de texto)
-  gsap.utils.toArray(".fade-left").forEach(el => {
-    gsap.from(el, {
-      opacity: 0,
-      x: -60,
-      duration: 1,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: el,
-        start: "top 80%"
-      }
-    });
-  });
+        // Cada letra dispara la animación
+        letters.forEach(letter => {
+            letter.addEventListener('mouseenter', scatter);
+            letter.addEventListener('mouseleave', restore);
+        });
 
-  // Fade desde la derecha (imágenes)
-  gsap.utils.toArray(".fade-right").forEach(el => {
-    gsap.from(el, {
-      opacity: 0,
-      x: 60,
-      duration: 1,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: el,
-        start: "top 80%"
-      }
-    });
-  });
+        // Entrada inicial suave
+        gsap.from(letters, {
+            duration: 0.9,
+            y: 20,
+            opacity: 0,
+            ease: "power2.out",
+            stagger: 0.03
+        });
     </script>
 
+
     <script src="mainprueba.js"></script>
+    <script src="carrusel.js"></script>
 
 </body>
 
