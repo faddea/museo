@@ -9,62 +9,9 @@
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
-    <style>
-        .carousel-item {
-            scroll-snap-align: center;
-            flex-shrink: 0;
-            width: 100%;
-        }
-        
-        .carousel-container::-webkit-scrollbar {
-            display: none;
-        }
-        /* Ancho de la barra */
-        
-         ::-webkit-scrollbar {
-            width: 14px;
-        }
-        /* Fondo de la barra */
-        
-         ::-webkit-scrollbar-track {
-            background: #5f5f5f;
-        }
-        /* "Pulgarcito" (la parte que se mueve) */
-        
-         ::-webkit-scrollbar-thumb {
-            background: #1f1f1f;
-            border-radius: none;
-        }
-        /* Hover en el pulgarcito */
-        
-         ::-webkit-scrollbar-thumb:hover {
-            background: #0c0c0c;
-            border-radius: 10px;
-        }
-        
-        .carousel-item {
-            scroll-snap-align: center;
-            flex-shrink: 0;
-            width: 100%;
-        }
-        
-        .carousel-container::-webkit-scrollbar {
-            display: none;
-        }
-        
-        .split-letter {
-            display: inline-block;
-            will-change: transform, opacity;
-            transform-origin: center center;
-            cursor: pointer;
-            user-select: none;
-        }
-        
-        .space {
-            width: 0.45rem;
-            display: inline-block;
-        }
-    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.14.0/gsap.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="bg-gray-100 font-sans text-gray-800 overflow-x-hidden">
@@ -151,142 +98,159 @@
     </div>
 </header>
 
+<!-- SECCIÓN COMBINADA: Galería + Categorías Técnicas -->
+<section id="Explora nuestra galeria" class="container mx-auto py-16 px-4 fade-section bg-gray-50">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="fade-up text-3xl md:text-4xl font-bold mb-4">Explora nuestra galeria</h2>
+        <p class="fade-up text-lg leading-relaxed text-gray-600">
+            El Museo de Avellaneda es un centro cultural dedicado a la preservación y difusión del patrimonio histórico, artístico y científico de la región. Desde nuestra fundación, nos hemos comprometido a ser un espacio de encuentro, aprendizaje y reflexión para
+            toda la comunidad.
+        </p>
+        <p class="fade-up text-lg leading-relaxed text-gray-600 mt-4">
+            Nuestras exposiciones permanentes y temporales ofrecen un viaje a través de los siglos, destacando los momentos clave que han moldeado nuestra identidad. Te invitamos a explorar nuestras salas y a sumergirte en las historias que definen a Avellaneda.
+        </p>
+    </div>
 
-
-
-    <section class="container mx-auto py-16 px-4 fade-section bg-gray-50">
-        <div class="text-center max-w-3xl mx-auto">
-            <h2 class="fade-up text-3xl md:text-4xl font-bold mb-4">Sobre el Museo</h2>
-            <p class="fade-up text-lg leading-relaxed text-gray-600">
-                El Museo de Avellaneda es un centro cultural dedicado a la preservación y difusión del patrimonio histórico, artístico y científico de la región. Desde nuestra fundación, nos hemos comprometido a ser un espacio de encuentro, aprendizaje y reflexión para
-                toda la comunidad.
-            </p>
-            <p class="fade-up text-lg leading-relaxed text-gray-600 mt-4">
-                Nuestras exposiciones permanentes y temporales ofrecen un viaje a través de los siglos, destacando los momentos clave que han moldeado nuestra identidad. Te invitamos a explorar nuestras salas y a sumergirte en las historias que definen a Avellaneda.
-            </p>
-        </div>
-        <div class="py-6 max-w-md mx-auto">
-            <!-- Card -->
-            <div class="relative bg-black rounded-2xl border border-white overflow-hidden group shadow-lg">
-                <!-- Imagen abajo -->
-                <div class="overflow-hidden">
-                    <img src="src/imagen-1.jpeg" alt="Imagen" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500">
-                </div>
-
-                <!-- Link en esquina inferior izquierda -->
-                <a href="https://ejemplo.com" class="absolute bottom-3 left-3 text-white bg-black/70 px-3 py-1 rounded-lg text-sm hover:bg-white hover:text-black transition">
-        Ver más
-      </a>
+    <!-- Categorías Técnicas -->
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 fade-up">
+        <!-- Electrónica -->
+        <div class="fade-up">
+            <h3 class="text-xl font-bold mb-4 text-center">Electrónica</h3>
+            <div class="space-y-3">
+                <img src="src/section 1/imagen - 2.jpeg" alt="Electrónica" class="rounded-lg shadow w-full h-64 object-cover transform transition duration-500 hover:-translate-y-3 hover:shadow-2xl">   
             </div>
         </div>
-    </section>
 
-    <!-- SECCIÓN: Categorías Técnicas -->
-<section class="max-w-6xl mx-auto py-12 px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
-    <!-- Electrónica -->
-    <div>
-        <h2 class="text-xl font-bold mb-4">Electrónica</h2>
-        <div class="space-y-3">
-            <img src="src/imagen-3.jpeg" alt="Electrónica" class="rounded-lg shadow">
-            <ul class="space-y-1">
-                <li>Proyectos de circuitos</li>
-                <li>Robótica básica</li>
-                <li>Arduino y microcontroladores</li>
-            </ul>
+        <!-- Informática -->
+        <div class="fade-up">
+            <h3 class="text-xl font-bold mb-4 text-center">Informática</h3>
+            <div class="space-y-3">
+                <img src="src/section 1/imagen-3.jpeg" alt="Informática" class="rounded-lg shadow w-full h-64 object-cover transform transition duration-500 hover:-translate-y-3 hover:shadow-2xl">
+                
+            </div>
         </div>
-    </div>
-    <!-- Informática -->
-    <div>
-        <h2 class="text-xl font-bold mb-4">Informática</h2>
-        <div class="space-y-3">
-            <img src="src/imagen-2.jpeg" alt="Informática" class="rounded-lg shadow">
-            <ul class="space-y-1">
-                <li>Redes y servidores</li>
-                <li>Aplicaciones escolares</li>
-                <li>Bases de datos</li>
-            </ul>
-        </div>
-    </div>
-    <!-- Mecánica -->
-    <div>
-        <h2 class="text-xl font-bold mb-4">Mecánica</h2>
-        <div class="space-y-3">
-            <img src="src/imagen-1.jpeg" alt="Mecánica" class="rounded-lg shadow">
-            <ul class="space-y-1">
-                <li>Maquinarias</li>
-                <li>Planos y diseños</li>
-                <li>Prototipos de taller</li>
-            </ul>
+
+        <!-- Mecánica -->
+        <div class="fade-up">
+            <h3 class="text-xl font-bold mb-4 text-center">Mecánica</h3>
+            <div class="space-y-3">
+                <img src="src/section 1/imagen -1.jpeg" alt="Mecánica" class="rounded-lg shadow w-full h-64 object-cover transform transition duration-500 hover:-translate-y-3 hover:shadow-2xl">
+            </div>
         </div>
     </div>
 </section>
+
+
+
 
     <!-- SECCIÓN: Bienvenida -->
 <section class="max-w-6xl mx-auto py-16 px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
     <div>
-        <h2 class="text-2xl md:text-3xl font-bold mb-4">Bienvenidos al Museo Técnico Escolar</h2>
-        <p class="text-gray-700 mb-6">
+        <h2 class="fade-up text-2xl md:text-3xl font-bold mb-4">Conoce nuestra escuela</h2>
+        <p class="fade-up text-gray-700 mb-6">
             Este espacio digital reúne los proyectos más destacados de los estudiantes en las áreas de 
             informática, electrónica y mecánica, mostrando la creatividad, innovación y esfuerzo que caracterizan 
             a nuestra escuela técnica.
         </p>
-        <a href="#" class="inline-block border border-gray-900 px-4 py-2 rounded-md hover:bg-gray-900 hover:text-white">
+        <a href="https://eetp478.blogspot.com" class="inline-block border border-gray-900 px-4 py-2 rounded-md hover:bg-gray-900 hover:text-white">
             Conocer Más →
         </a>
     </div>
+    <div class="relative group w-full flex justify-center">
+  <a href="https://eetp478.blogspot.com" target="_blank" class="block relative">
+    <img src="src/se3.jpeg" alt="Escuela Técnica"
+         class="fade-up rounded-lg shadow transform scale-90 transition duration-500 group-hover:opacity-0 group-hover:scale-95">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3397.2865454387543!2d-60.6809612!3d-31.626003899999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b5a9f385e7e7bd%3A0x3fd3aaaea5034793!2sEETP%20N%C2%B0%20478%20%22Dr.%20Nicol%C3%A1s%20Avellaneda%22!5e0!3m2!1ses!2sar!4v1759707784787!5m2!1ses!2sar"
+      class="absolute inset-0 w-full h-full rounded-lg opacity-0 group-hover:opacity-100 transition duration-500"
+      allowfullscreen="" loading="lazy"></iframe>
+  </a>
+</div>
+</section>
+
+<section id="collection-section" class="relative overflow-hidden pt-16"> 
+    
+    <div class="absolute inset-x-0 top-0 h-full w-full z-10 flex items-center justify-center">
+        <h1 id="main-title" class="text-4xl md:text-6xl text-white text-center p-4 z-20">Acerca del museo</h1>
+    </div>
+
+    <div id="interactive-bg" class="absolute inset-x-0 top-0 h-full w-full bg-cover bg-center z-0" 
+         style="background-image: url('https://veonoticias.com/wp-content/uploads/2024/07/escuela-avellaneda.jpeg');"> 
+        <div class="h-full bg-black bg-opacity-40"></div>
+    </div>
+    
+    <div id="collection-content" class="relative max-w-6xl mx-auto py-16 px-6 z-20 bg-white shadow-xl rounded-xl transform translate-y-full opacity-0">
+        El contenido inicial de proyectos está aquí (o vacío si prefieres que se cargue dinámicamente).
+    </div>
+</section>
+
+<section id="about-section" class="fade-up container mx-auto py-16 px-4 bg-gray-50">
+    <div class="text-center max-w-3xl mx-auto">
+        <h2 id="about-title" class="text-3xl md:text-4xl font-bold mb-4">Proposito del Museo</h2>
+        <p id="about-text" class="text-lg leading-relaxed text-gray-600">
+            El Museo se creó para exhibir los logros de nuestros alumnos y la historia de nuestra institución, sirviendo como un punto de encuentro entre la tecnología, la historia y la comunidad.
+        </p>
+    </div>
+</section>
+
+<section class="max-w-6xl mx-auto py-16 px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
     <div>
-        <img src="src/se3.jpeg" alt="Escuela Técnica" class="rounded-lg shadow">
+        <h2 class="fade-up text-2xl md:text-3xl font-bold mb-4">Nuesrea historia</h2>
+        <p class="fade-up text-gray-700 mb-6">
+            La escuela actualmente cuenta con 90 años de vigencia, formando a tecnicos en diversas especialidades, este espacio digital reúne los proyectos más destacados de los estudiantes en las áreas de 
+            informática, electrónica y mecánica, mostrando la creatividad, innovación y esfuerzo que caracterizan 
+            a nuestra escuela técnica.
+        </p>
+        <a href="https://eetp478.blogspot.com" class="inline-block border border-gray-900 px-4 py-2 rounded-md hover:bg-gray-900 hover:text-white">
+            Conocer Más →
+        </a>
+    </div>
+    <div class="relative group w-full flex justify-center">
+    <img src="https://i.ytimg.com/vi/ruSOsBQz1cc/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGHIgRShNMA8=&rs=AOn4CLBwYVZ-nNGniu1cUc7NAFsLL23sKA" alt="Escuela Técnica"
+         class="fade-up rounded-lg shadow transform scale-90 transition duration-500 group-hover:opacity-0 group-hover:scale-95">
+</div>
+</section>
+
+<section class="relative bg-cover bg-center bg-no-repeat h-[600px] flex items-center justify-center shadow-xl" style="background-image: url('src/imagen-1.jpeg')">
+  <div class="bg-black bg-opacity-50 p-8 rounded text-center text-white max-w-2xl">
+    <h2 class="text-4xl font-bold mb-6">Nuestros recuerdos</h2>
+    <p class="text-lg">Este es un párrafo descriptivo que acompaña al título y explica un poco más sobre esta sección. Ahora la sección es más alta para dar más espacio al contenido y a la imagen de fondo.</p>
+  </div>
+</section>
+
+<section id="about-section" class="fade-up container mx-auto py-16 px-4 bg-gray-50">
+    <div class="text-center max-w-3xl mx-auto">
+        <h2 id="about-title" class="text-3xl md:text-4xl font-bold mb-4">Reconocimientos</h2>
+        <p id="about-text" class="text-lg leading-relaxed text-gray-600">
+            El Museo se creó para exhibir los logros de nuestros alumnos y la historia de nuestra institución, sirviendo como un punto de encuentro entre la tecnología, la historia y la comunidad.
+        </p>
     </div>
 </section>
 
     <section class="container mx-auto py-16 px-4 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-8">Ubicación y Plano</h2>
+        <h3 class="text-3xl md:text-4xl font-bold mb-8">Ubicación y Plano</h3>
         <div class="bg-white shadow-md rounded-lg overflow-hidden max-w-4xl mx-auto">
             <img src="https://cdn.dribbble.com/userupload/13785232/file/original-b86d09264974386241cd4e194c5445e0.png" alt="Plano del Museo" class="w-full h-auto object-cover">
         </div>
     </section>
 
-    <!-- SECCIÓN: Colección -->
-<section class="max-w-6xl mx-auto py-16 px-6">
-    <div class="flex justify-between items-center mb-8">
-        <h2 class="text-2xl md:text-3xl font-bold">Proyectos Destacados</h2>
-        <a href="#" class="text-gray-700 hover:underline">Ver Todos →</a>
-    </div>
-    <p class="text-gray-600 mb-8">
-        Aquí se exponen proyectos realizados por los alumnos, desde diseños mecánicos y sistemas electrónicos 
-        hasta aplicaciones y programas de informática.
+<section class="w-full h-[700px] flex">
+  <!-- Lado izquierdo: blanco con texto arriba -->
+  <div class="w-1/2 bg-white flex flex-col justify-start p-16">
+    <h2 class="fade-up text-4xl font-bold mb-6">El Futuro de los Técnicos</h2>
+    <p id="animated-text" class="text-lg text-gray-700">
+      La escuela siempre busca mejorar para garantizar un futuro brillante a nuestros estudiantes técnicos. Nos enfocamos en ofrecer experiencias educativas de alta calidad, promoviendo el aprendizaje práctico, la creatividad y la innovación. Además, brindamos espacios modernos donde los alumnos pueden experimentar, explorar nuevas tecnologías y desarrollar habilidades que los preparen para los desafíos del mundo laboral. Nuestro compromiso es formar profesionales competentes, responsables y capaces de transformar la sociedad con conocimiento y pasión.
     </p>
+  </div>
 
-    <!-- Grid de proyectos -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        <div>
-            <img src="src/imagen-1.jpeg" alt="Proyecto 1" class="rounded-lg shadow mb-3">
-            <h3 class="font-semibold">Robot Seguidor de Línea</h3>
-            <p class="text-sm text-gray-600">Electrónica (2024)</p>
-        </div>
-        <div>
-            <img src="src/imagen-2.jpeg" alt="Proyecto 2" class="rounded-lg shadow mb-3">
-            <h3 class="font-semibold">Aplicación de Gestión Escolar</h3>
-            <p class="text-sm text-gray-600">Informática (2023)</p>
-        </div>
-        <div>
-            <img src="src/imagen-3.jpeg" alt="Proyecto 3" class="rounded-lg shadow mb-3">
-            <h3 class="font-semibold">Motor Didáctico</h3>
-            <p class="text-sm text-gray-600">Mecánica (2022)</p>
-        </div>
-        <div>
-            <img src="src/imagen-1.jpeg" alt="Proyecto 4" class="rounded-lg shadow mb-3">
-            <h3 class="font-semibold">Impresora 3D Artesanal</h3>
-            <p class="text-sm text-gray-600">Electrónica & Informática (2023)</p>
-        </div>
-    </div>
-
-    <div class="text-center mt-12">
-        <a href="#" class="inline-block bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800">
-            Cargar Más
-        </a>
-    </div>
+  <!-- Lado derecho: imagen ocupa todo sin bordes -->
+  <div class="w-1/2 h-full overflow-hidden">
+    <img src="src/section 1/images (3).jfif.jpg" alt="Estudiantes trabajando" class="w-full h-full object-cover">
+  </div>
 </section>
+
+<!-- GSAP -->
+
+
 
 
 
@@ -340,156 +304,14 @@
 
     <!-- GSAP Animaciones -->
     <script>
-        gsap.registerPlugin(ScrollTrigger);
-
-        // Navbar aparece desde arriba
-        gsap.from("nav", {
-            y: -80,
-            opacity: 0,
-            duration: 1,
-            ease: "power3.out"
-        });
-
-        // Header textos
-        gsap.from("header h1, header h2, header p", {
-            opacity: 0,
-            y: 50,
-            duration: 1,
-            stagger: 0.3,
-            delay: 0.5
-        });
-
-        // Secciones fade in
-        gsap.utils.toArray(".fade-section").forEach(section => {
-            gsap.from(section, {
-                opacity: 0,
-                y: 50,
-                duration: 1,
-                scrollTrigger: {
-                    trigger: section,
-                    start: "top 85%",
-                }
-            });
-        });
-
-        // Fade-Up (títulos y párrafos)
-        gsap.utils.toArray(".fade-up").forEach(el => {
-            gsap.from(el, {
-                opacity: 0,
-                y: 40,
-                duration: 1,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: el,
-                    start: "top 85%"
-                }
-            });
-        });
-
-        // Fade desde la izquierda (bloques de texto)
-        gsap.utils.toArray(".fade-left").forEach(el => {
-            gsap.from(el, {
-                opacity: 0,
-                x: -60,
-                duration: 1,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: el,
-                    start: "top 80%"
-                }
-            });
-        });
-
-        // Fade desde la derecha (imágenes)
-        gsap.utils.toArray(".fade-right").forEach(el => {
-            gsap.from(el, {
-                opacity: 0,
-                x: 60,
-                duration: 1,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: el,
-                    start: "top 80%"
-                }
-            });
-        });
-
-
-
-
-
-
-        // Función para separar cada letra en un span
-        const wrapTextInSpans = (node) => {
-            const text = node.textContent;
-            node.innerHTML = '';
-            const letters = [];
-            for (const ch of text) {
-                if (ch === ' ') {
-                    const s = document.createElement('span');
-                    s.className = 'space';
-                    s.innerHTML = '&nbsp;';
-                    node.appendChild(s);
-                } else {
-                    const span = document.createElement('span');
-                    span.className = 'split-letter';
-                    span.textContent = ch;
-                    node.appendChild(span);
-                    letters.push(span);
-                }
-            }
-            return letters;
-        };
-
-        // Tomamos el elemento
-        const animatedSpan = document.getElementById('animated-span');
-        const letters = wrapTextInSpans(animatedSpan);
-
-        // Animación de "scatter" al pasar el mouse sobre cualquier letra
-        function scatter() {
-            gsap.to(letters, {
-                duration: 1,
-                x: () => gsap.utils.random(-50, 50),
-                y: () => gsap.utils.random(-50, 50),
-                rotation: () => gsap.utils.random(-45, 45),
-                scale: () => gsap.utils.random(0.7, 1.3),
-                ease: "expo.out",
-                stagger: 0.02
-            });
-        }
-
-        // Volver a posición original
-        function restore() {
-            gsap.to(letters, {
-                duration: 0.8,
-                x: 0,
-                y: 0,
-                rotation: 0,
-                scale: 1,
-                ease: "power3.out",
-                stagger: 0.02
-            });
-        }
-
-        // Cada letra dispara la animación
-        letters.forEach(letter => {
-            letter.addEventListener('mouseenter', scatter);
-            letter.addEventListener('mouseleave', restore);
-        });
-
-        // Entrada inicial suave
-        gsap.from(letters, {
-            duration: 0.9,
-            y: 20,
-            opacity: 0,
-            ease: "power2.out",
-            stagger: 0.03
-        });
+        
     </script>
 
 
-    <script src="mainprueba.js"></script>
-    <script src="carrusel.js"></script>
+
+<script src="mainprueba.js"></script>
+<script type="module" src="carrusel.js"></script>
+<script type="module" src="animations.js"></script>
 
 </body>
 
