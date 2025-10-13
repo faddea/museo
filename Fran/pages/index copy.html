@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museo Avellaneda - Inicio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.14.0/gsap.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-gray-100 font-sans text-gray-800 overflow-x-hidden">
+
+    <!-- NAVBAR -->
+    <nav class="bg-neutral-950 shadow-md py-6 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-gray-100">Museo Avellaneda</a>
+            <!-- Menú en desktop -->
+            <div class="hidden md:flex space-x-6 text-gray-200">
+                <a href="#" class="hover:text-gray-300">Inicio</a>
+                <a href="prueba de dylan/museo2/paginas/escuela_historia.html" class="hover:text-gray-300">Exposiciones</a>
+                <a href="prueba de dylan/museo2/paginas/digital_collections.html" class="hover:text-gray-300">Colección</a>
+                <a href="prueba de dylan/museo2/paginas/recursos_educativos.html" class="hover:text-gray-300">Visítanos</a>
+                <a href="#" class="hover:text-gray-300">Contacto</a>
+            </div>
+            <!-- Botón menú hamburguesa solo en móviles -->
+            <button id="menu-button" class="md:hidden focus:outline-none">
+      <svg class="text-gray-100 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+      </svg>
+    </button>
+        </div>
+    </nav>
+
+    <!-- Menú lateral SOLO móviles -->
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-neutral-950 shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50 md:hidden">
+        <button id="close-menu" class="absolute top-4 right-4 text-gray-100 text-2xl">&times;</button>
+        <nav class="flex flex-col mt-16 space-y-4 text-center">
+            <a href="#" class="py-2 text-gray-50 hover:bg-neutral-900 hover:text-gray-100">Inicio</a>
+            <a href="#" class="py-2 text-gray-50 hover:bg-neutral-900 hover:text-gray-100">Exposiciones</a>
+            <a href="#" class="py-2 text-gray-50 hover:bg-neutral-900 hover:text-gray-100">Colección</a>
+            <a href="#" class="py-2 text-gray-50 hover:bg-neutral-900 hover:text-gray-100">Visítanos</a>
+            <a href="#" class="py-2 text-gray-50 hover:bg-neutral-900 hover:text-gray-100">Contacto</a>
+        </nav>
+    </div>
+
+    <!-- Overlay -->
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-80 hidden z-40 md:hidden"></div>
+
+    <!-- HEADER -->
+    <header class="relative w-full overflow-hidden shadow-lg">
+    <div id="carousel-container" 
+         class="carousel-container flex overflow-x-hidden snap-x snap-mandatory" 
+         style="height: 89vh;">
+        
+        <div class="carousel-item flex-shrink-0 w-screen relative">
+            <img src="src/imagen-1.jpeg" alt="Imagen 1 del museo" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-white p-4 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Bienvenidos al Museo Avellaneda</h1>
+                <p class="text-center max-w-3xl mx-auto text-gray-100 text-lg px-4">
+                    Descubre la riqueza cultural y la historia que el Museo Avellaneda tiene para ofrecer. Sumérgete en exposiciones únicas y colecciones que te conectan con el pasado y el presente.
+                </p>
+            </div>
+        </div>
+
+        <div class="carousel-item flex-shrink-0 w-screen relative">
+            <img src="src/imagen-2.jpeg" alt="Imagen 2 del museo" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-white p-4 text-center">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Descubre nuestra rica historia</h2>
+                <p class="text-center max-w-3xl mx-auto text-gray-100 text-lg px-4">
+                    Descubre la riqueza cultural y la historia que el Museo Avellaneda tiene para ofrecer. Sumérgete en exposiciones únicas y colecciones que te conectan con el pasado y el presente.
+                </p>
+            </div>
+        </div>
+
+        <div class="carousel-item flex-shrink-0 w-screen relative">
+            <img src="src/imagen-3.jpeg" alt="Imagen 3 del museo" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-white p-4 text-center">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Explora nuestras colecciones</h2>
+                <p class="text-center max-w-3xl mx-auto text-gray-100 text-lg px-4">
+                    Descubre la riqueza cultural y la historia que el Museo Avellaneda tiene para ofrecer. Sumérgete en exposiciones únicas y colecciones que te conectan con el pasado y el presente.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dots -->
+    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        <button class="carousel-dot w-3 h-3 bg-white rounded-full opacity-50 hover:opacity-100 transition-opacity" data-index="0"></button>
+        <button class="carousel-dot w-3 h-3 bg-white rounded-full opacity-50 hover:opacity-100 transition-opacity" data-index="1"></button>
+        <button class="carousel-dot w-3 h-3 bg-white rounded-full opacity-50 hover:opacity-100 transition-opacity" data-index="2"></button>
+    </div>
+</header>
+
+<!-- SECCIÓN COMBINADA: Galería + Categorías Técnicas -->
+<section id="Explora nuestra galeria" class="container mx-auto py-16 px-4 fade-section bg-gray-50">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="fade-up text-3xl md:text-4xl font-bold mb-4">Explora nuestra galeria</h2>
+        <p class="fade-up text-lg leading-relaxed text-gray-600">
+            El Museo de Avellaneda es un centro cultural dedicado a la preservación y difusión del patrimonio histórico, artístico y científico de la región. Desde nuestra fundación, nos hemos comprometido a ser un espacio de encuentro, aprendizaje y reflexión para
+            toda la comunidad.
+        </p>
+        <p class="fade-up text-lg leading-relaxed text-gray-600 mt-4">
+            Nuestras exposiciones permanentes y temporales ofrecen un viaje a través de los siglos, destacando los momentos clave que han moldeado nuestra identidad. Te invitamos a explorar nuestras salas y a sumergirte en las historias que definen a Avellaneda.
+        </p>
+    </div>
+
+    <!-- Categorías Técnicas -->
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 fade-up">
+        <!-- Electrónica -->
+        <div class="fade-up">
+            <h3 class="text-xl font-bold mb-4 text-center">Electrónica</h3>
+            <div class="space-y-3">
+                <img src="src/section 1/imagen - 2.jpeg" alt="Electrónica" class="rounded-lg shadow w-full h-64 object-cover transform transition duration-500 hover:-translate-y-3 hover:shadow-2xl">   
+            </div>
+        </div>
+
+        <!-- Informática -->
+        <div class="fade-up">
+            <h3 class="text-xl font-bold mb-4 text-center">Informática</h3>
+            <div class="space-y-3">
+                <img src="src/section 1/imagen-3.jpeg" alt="Informática" class="rounded-lg shadow w-full h-64 object-cover transform transition duration-500 hover:-translate-y-3 hover:shadow-2xl">
+                
+            </div>
+        </div>
+
+        <!-- Mecánica -->
+        <div class="fade-up">
+            <h3 class="text-xl font-bold mb-4 text-center">Mecánica</h3>
+            <div class="space-y-3">
+                <img src="src/section 1/imagen -1.jpeg" alt="Mecánica" class="rounded-lg shadow w-full h-64 object-cover transform transition duration-500 hover:-translate-y-3 hover:shadow-2xl">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+    <!-- SECCIÓN: Bienvenida -->
+<section class="max-w-6xl mx-auto py-16 px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div>
+        <h2 class="fade-up text-2xl md:text-3xl font-bold mb-4">Conoce nuestra escuela</h2>
+        <p class="fade-up text-gray-700 mb-6">
+            Este espacio digital reúne los proyectos más destacados de los estudiantes en las áreas de 
+            informática, electrónica y mecánica, mostrando la creatividad, innovación y esfuerzo que caracterizan 
+            a nuestra escuela técnica.
+        </p>
+        <a href="https://eetp478.blogspot.com" class="inline-block border border-gray-900 px-4 py-2 rounded-md hover:bg-gray-900 hover:text-white">
+            Conocer Más →
+        </a>
+    </div>
+    <div class="relative group w-full flex justify-center">
+  <a href="https://eetp478.blogspot.com" target="_blank" class="block relative">
+    <img src="src/se3.jpeg" alt="Escuela Técnica"
+         class="fade-up rounded-lg shadow transform scale-90 transition duration-500 group-hover:opacity-0 group-hover:scale-95">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3397.2865454387543!2d-60.6809612!3d-31.626003899999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b5a9f385e7e7bd%3A0x3fd3aaaea5034793!2sEETP%20N%C2%B0%20478%20%22Dr.%20Nicol%C3%A1s%20Avellaneda%22!5e0!3m2!1ses!2sar!4v1759707784787!5m2!1ses!2sar"
+      class="absolute inset-0 w-full h-full rounded-lg opacity-0 group-hover:opacity-100 transition duration-500"
+      allowfullscreen="" loading="lazy"></iframe>
+  </a>
+</div>
+</section>
+
+<section id="collection-section" class="relative overflow-hidden pt-16"> 
+    
+    <div class="absolute inset-x-0 top-0 h-full w-full z-10 flex items-center justify-center">
+        <h1 id="main-title" class="text-4xl md:text-6xl text-white text-center p-4 z-20">Acerca del museo</h1>
+    </div>
+
+    <div id="interactive-bg" class="absolute inset-x-0 top-0 h-full w-full bg-cover bg-center z-0" 
+         style="background-image: url('https://veonoticias.com/wp-content/uploads/2024/07/escuela-avellaneda.jpeg');"> 
+        <div class="h-full bg-black bg-opacity-40"></div>
+    </div>
+    
+    <div id="collection-content" class="relative max-w-6xl mx-auto py-16 px-6 z-20 bg-white shadow-xl rounded-xl transform translate-y-full opacity-0">
+        El contenido inicial de proyectos está aquí (o vacío si prefieres que se cargue dinámicamente).
+    </div>
+</section>
+
+<section id="about-section" class="fade-up container mx-auto py-16 px-4 bg-gray-50">
+    <div class="text-center max-w-3xl mx-auto">
+        <h2 id="about-title" class="text-3xl md:text-4xl font-bold mb-4">Proposito del Museo</h2>
+        <p id="about-text" class="text-lg leading-relaxed text-gray-600">
+            El Museo se creó para exhibir los logros de nuestros alumnos y la historia de nuestra institución, sirviendo como un punto de encuentro entre la tecnología, la historia y la comunidad.
+        </p>
+    </div>
+</section>
+
+<section class="max-w-6xl mx-auto py-16 px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div>
+        <h2 class="fade-up text-2xl md:text-3xl font-bold mb-4">Nuesrea historia</h2>
+        <p class="fade-up text-gray-700 mb-6">
+            La escuela actualmente cuenta con 90 años de vigencia, formando a tecnicos en diversas especialidades, este espacio digital reúne los proyectos más destacados de los estudiantes en las áreas de 
+            informática, electrónica y mecánica, mostrando la creatividad, innovación y esfuerzo que caracterizan 
+            a nuestra escuela técnica.
+        </p>
+        <a href="https://eetp478.blogspot.com" class="inline-block border border-gray-900 px-4 py-2 rounded-md hover:bg-gray-900 hover:text-white">
+            Conocer Más →
+        </a>
+    </div>
+    <div class="relative group w-full flex justify-center">
+    <img src="https://i.ytimg.com/vi/ruSOsBQz1cc/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGHIgRShNMA8=&rs=AOn4CLBwYVZ-nNGniu1cUc7NAFsLL23sKA" alt="Escuela Técnica"
+         class="fade-up rounded-lg shadow transform scale-90 transition duration-500 group-hover:opacity-0 group-hover:scale-95">
+</div>
+</section>
+
+<section class="relative bg-cover bg-center bg-no-repeat h-[600px] flex items-center justify-center shadow-xl" style="background-image: url('src/imagen-1.jpeg')">
+  <div class="bg-black bg-opacity-50 p-8 rounded text-center text-white max-w-2xl">
+    <h2 class="text-4xl font-bold mb-6">Nuestros recuerdos</h2>
+    <p class="text-lg">Este es un párrafo descriptivo que acompaña al título y explica un poco más sobre esta sección. Ahora la sección es más alta para dar más espacio al contenido y a la imagen de fondo.</p>
+  </div>
+</section>
+
+<section id="about-section" class="fade-up container mx-auto py-16 px-4 bg-gray-50">
+    <div class="text-center max-w-3xl mx-auto">
+        <h2 id="about-title" class="text-3xl md:text-4xl font-bold mb-4">Reconocimientos</h2>
+        <p id="about-text" class="text-lg leading-relaxed text-gray-600">
+            El Museo se creó para exhibir los logros de nuestros alumnos y la historia de nuestra institución, sirviendo como un punto de encuentro entre la tecnología, la historia y la comunidad.
+        </p>
+    </div>
+</section>
+
+    <section class="container mx-auto py-16 px-4 text-center">
+        <h3 class="text-3xl md:text-4xl font-bold mb-8">Ubicación y Plano</h3>
+        <div class="bg-white shadow-md rounded-lg overflow-hidden max-w-4xl mx-auto">
+            <img src="https://cdn.dribbble.com/userupload/13785232/file/original-b86d09264974386241cd4e194c5445e0.png" alt="Plano del Museo" class="w-full h-auto object-cover">
+        </div>
+    </section>
+
+<section class="w-full h-[700px] flex">
+  <!-- Lado izquierdo: blanco con texto arriba -->
+  <div class="w-1/2 bg-white flex flex-col justify-start p-16">
+    <h2 class="fade-up text-4xl font-bold mb-6">El Futuro de los Técnicos</h2>
+    <p id="animated-text" class="text-lg text-gray-700">
+      La escuela siempre busca mejorar para garantizar un futuro brillante a nuestros estudiantes técnicos. Nos enfocamos en ofrecer experiencias educativas de alta calidad, promoviendo el aprendizaje práctico, la creatividad y la innovación. Además, brindamos espacios modernos donde los alumnos pueden experimentar, explorar nuevas tecnologías y desarrollar habilidades que los preparen para los desafíos del mundo laboral. Nuestro compromiso es formar profesionales competentes, responsables y capaces de transformar la sociedad con conocimiento y pasión.
+    </p>
+  </div>
+
+  <!-- Lado derecho: imagen ocupa todo sin bordes -->
+  <div class="w-1/2 h-full overflow-hidden">
+    <img src="src/section 1/images (3).jfif.jpg" alt="Estudiantes trabajando" class="w-full h-full object-cover">
+  </div>
+</section>
+
+<!-- GSAP -->
+
+
+
+
+
+    <footer class="bg-black border-t border-gray-800 py-12 px-8 md:px-16 relative z-20">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Identidad -->
+        <div>
+            <div class="text-2xl font-bold text-white mb-4">
+                Museo<span id="animated-span" class="text-sky-500">Técnico</span>
+            </div>
+            <p class="text-gray-400 text-sm">
+                Espacio digital de la Escuela Técnica Avellaneda para mostrar proyectos,
+                innovación y el trabajo de nuestros estudiantes.
+            </p>
+        </div>
+
+        <!-- Enlaces rápidos -->
+        <div>
+            <h4 class="text-white font-semibold mb-4">Secciones</h4>
+            <ul class="space-y-2 text-gray-400 text-sm">
+                <li><a href="#categorias" class="hover:text-sky-400">Categorías</a></li>
+                <li><a href="#coleccion" class="hover:text-sky-400">Colección</a></li>
+                <li><a href="#ubicacion" class="hover:text-sky-400">Ubicación</a></li>
+            </ul>
+        </div>
+
+        <!-- Información -->
+        <div>
+            <h4 class="text-white font-semibold mb-4">Institución</h4>
+            <ul class="space-y-2 text-gray-400 text-sm">
+                <li><a href="#" class="hover:text-sky-400">Sobre el Museo</a></li>
+                <li><a href="#" class="hover:text-sky-400">Nuestra Escuela</a></li>
+                <li><a href="#" class="hover:text-sky-400">Contacto</a></li>
+            </ul>
+        </div>
+
+        <!-- Contacto -->
+        <div>
+            <h4 class="text-white font-semibold mb-4">Contacto</h4>
+            <p class="text-gray-400 text-sm">EETP N°478 "Dr. Nicolás Avellaneda"</p>
+            <p class="text-gray-400 text-sm">Av. Principal 1234, Rosario, Santa Fe</p>
+            <p class="text-gray-400 text-sm">escuela478@museotecnico.edu.ar</p>
+            <p class="text-gray-400 text-sm">+54 (341) 123-4567</p>
+        </div>
+    </div>
+
+    <div class="mt-12 border-t border-gray-800 pt-6 text-center text-gray-500 text-sm">
+        © 2025 Museo Técnico Escolar Avellaneda. Todos los derechos reservados.
+    </div>
+</footer>
+
+    <!-- GSAP Animaciones -->
+    <script>
+        
+    </script>
+
+
+
+<script src="js/mainprueba.js"></script>
+<script type="module" src="js/carrusel.js"></script>
+<script type="module" src="js/animations.js"></script>
+
+</body>
+
+</html>
