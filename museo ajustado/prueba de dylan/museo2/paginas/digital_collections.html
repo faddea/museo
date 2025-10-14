@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colecciones Digitales - Museo Digital EETPN°470</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <meta name="description" content="Explora nuestro archivo digital completo con capacidades avanzadas de búsqueda y filtrado. Descubre artefactos, documentos históricos y memorabilia de la EETPN°470." />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fmuseodigi8456back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-background">
+    <!-- Navigation Header -->
+    <nav class="bg-secondary-800 text-white shadow-card sticky top-0 z-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo and Brand -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="font-crimson text-lg font-semibold">Museo Digital</h1>
+                        <p class="text-secondary-300 text-xs">EETPN°470 Nicolás Avellaneda</p>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../index.html" class="text-secondary-300 hover:text-white transition-colors duration-200">Inicio</a>
+                    <a href="digital_collections.html" class="text-white border-b-2 border-primary pb-1">Colecciones</a>
+                    <a href="school_history.html" class="text-secondary-300 hover:text-white transition-colors duration-200">Historia</a>
+                    <a href="educational_resources.html" class="text-secondary-300 hover:text-white transition-colors duration-200">Recursos</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 rounded-lg hover:bg-secondary-700 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-primary-50 to-accent-50 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="font-crimson text-4xl md:text-5xl font-semibold text-text-primary mb-6">
+                    Colecciones Digitales
+                </h1>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto mb-8">
+                    Explora nuestro archivo digital completo con más de 2,500 artefactos, documentos históricos y memorabilia que preservan la rica herencia de nuestra institución educativa.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="btn-primary">
+                        <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                        Búsqueda Avanzada
+                    </button>
+                    <button class="btn-secondary">
+                        <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                        </svg>
+                        Mis Favoritos
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Exposiciones Destacadas -->
+<section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="font-crimson text-3xl font-semibold text-text-primary mb-4">Exposiciones Destacadas</h2>
+            <p class="text-text-secondary max-w-2xl mx-auto">Descubre nuestras exposiciones permanentes y temporales que narran la historia de nuestra institución.</p>
+        </div>
+
+        <!-- Exhibition 1 -->
+        <div class="mb-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div class="lg:order-1">
+                    <div class="relative overflow-hidden rounded-2xl shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="75 Años de Educación Técnica" class="w-full h-96 object-cover" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <span class="bg-primary px-3 py-1 rounded-full text-sm font-medium">Exposición Permanente</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:order-2">
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="font-crimson text-2xl font-semibold text-text-primary mb-3">75 Años de Educación Técnica</h3>
+                            <p class="text-text-secondary text-lg leading-relaxed">
+                                Un recorrido completo por la evolución de la educación técnica en nuestra institución desde 1950 hasta la actualidad. 
+                                Descubre cómo hemos formado generaciones de técnicos especializados que han contribuido al desarrollo industrial del país.
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-primary-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-text-primary mb-1">Período</h4>
+                                <p class="text-text-secondary text-sm">1950 - 2025</p>
+                            </div>
+                            <div class="bg-accent-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-text-primary mb-1">Elementos</h4>
+                                <p class="text-text-secondary text-sm">850 piezas</p>
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <h4 class="font-semibold text-text-primary">Destacados de la exposición:</h4>
+                            <ul class="space-y-2 text-text-secondary">
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-primary mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    Fotografías históricas de ceremonias de graduación
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-primary mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    Herramientas y maquinaria original de los talleres
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-primary mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    Documentos fundacionales y actas históricas
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-primary mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    Testimonios audiovisuales de egresados destacados
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flex space-x-4">
+                            <button class="btn-primary">
+                                <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                </svg>
+                                Ver Exposición
+                            </button>
+                            <button class="btn-secondary">
+                                <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/>
+                                </svg>
+                                Compartir
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exhibition 2 -->
+        <div class="mb-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div class="lg:order-2">
+                    <div class="relative overflow-hidden rounded-2xl shadow-xl">
+                        <img src="https://images.pixabay.com/photo/2016/03/27/07/32/education-1282104_1280.jpg" alt="Evolución Tecnológica" class="w-full h-96 object-cover" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <span class="bg-accent px-3 py-1 rounded-full text-sm font-medium">Exposición Temporal</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:order-1">
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="font-crimson text-2xl font-semibold text-text-primary mb-3">Revolución Digital en las Aulas</h3>
+                            <p class="text-text-secondary text-lg leading-relaxed">
+                                Explora la transformación digital que ha revolucionado la educación técnica. Desde las primeras computadoras 
+                                hasta las tecnologías de hoy, descubre cómo la innovación ha moldeado el aprendizaje en nuestra institución.
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-primary-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-text-primary mb-1">Duración</h4>
+                                <p class="text-text-secondary text-sm">Mar - Jun 2025</p>
+                            </div>
+                            <div class="bg-accent-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-text-primary mb-1">Elementos</h4>
+                                <p class="text-text-secondary text-sm">156 piezas</p>
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <h4 class="font-semibold text-text-primary">Destacados de la exposición:</h4>
+                            <ul class="space-y-2 text-text-secondary">
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-accent mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    Primera computadora personal de la escuela (1985)
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-accent mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    Evolución de software CAD/CAM en talleres
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-accent mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    Proyectos estudiantiles con tecnología actual
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-accent mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    Realidad virtual aplicada a la educación técnica
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flex space-x-4">
+                            <button class="btn-primary">
+                                <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                </svg>
+                                Ver Exposición
+                            </button>
+                            <button class="btn-secondary">
+                                <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/>
+                                </svg>
+                                Compartir
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exhibition 3 -->
+        <div class="mb-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div class="lg:order-1">
+                    <div class="relative overflow-hidden rounded-2xl shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Mujeres en la Técnica" class="w-full h-96 object-cover" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <span class="bg-success px-3 py-1 rounded-full text-sm font-medium">Exposición Especial</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:order-2">
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="font-crimson text-2xl font-semibold text-text-primary mb-3">Pioneras de la Técnica</h3>
+                            <p class="text-text-secondary text-lg leading-relaxed">
+                                Celebramos el rol fundamental de las mujeres en la educación técnica. Conoce las historias inspiradoras 
+                                de alumnas, profesoras y egresadas que han roto barreras y abierto caminos en el mundo técnico-industrial.
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-primary-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-text-primary mb-1">Período</h4>
+                                <p class="text-text-secondary text-sm">1975 - 2025</p>
+                            </div>
+                            <div class="bg-accent-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-text-primary mb-1">Testimonios</h4>
+                                <p class="text-text-secondary text-sm">45 historias</p>
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <h4 class="font-semibold text-text-primary">Destacados de la exposición:</h4>
+                            <ul class="space-y-2 text-text-secondary">
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    Primera generación de mujeres técnicas (1975)
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    Profesoras pioneras en especialidades técnicas
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    Logros profesionales de egresadas destacadas
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-success mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    Testimonios audiovisuales inspiradores
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flex space-x-4">
+                            <button class="btn-primary">
+                                <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                </svg>
+                                Ver Exposición
+                            </button>
+                            <button class="btn-secondary">
+                                <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/>
+                                </svg>
+                                Compartir
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Advanced Search Interface -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="card-elevated">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="font-crimson text-2xl font-semibold text-text-primary">Búsqueda y Filtros</h2>
+                    <button class="text-accent hover:text-accent-600 transition-colors">
+                        <svg class="w-5 h-5 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                        </svg>
+                        Limpiar Filtros
+                    </button>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="mb-6">
+                    <div class="relative">
+                        <input type="text" placeholder="Buscar en colecciones digitales..." class="input-field pl-12 pr-4" />
+                        <svg class="w-5 h-5 text-text-secondary absolute left-4 top-1/2 transform -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Filter Options -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Date Range Filter -->
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-2">Período Histórico</label>
+                        <select class="input-field">
+                            <option>Todos los períodos</option>
+                            <option>1950-1960</option>
+                            <option>1960-1970</option>
+                            <option>1970-1980</option>
+                            <option>1980-1990</option>
+                            <option>1990-2000</option>
+                            <option>2000-2010</option>
+                            <option>2010-2025</option>
+                        </select>
+                    </div>
+
+                    <!-- Content Type Filter -->
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-2">Tipo de Contenido</label>
+                        <select class="input-field">
+                            <option>Todos los tipos</option>
+                            <option>Fotografías</option>
+                            <option>Documentos</option>
+                            <option>Audio</option>
+                            <option>Video</option>
+                            <option>Memorabilia</option>
+                            <option>Publicaciones</option>
+                        </select>
+                    </div>
+
+                    <!-- Theme Filter -->
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-2">Temática</label>
+                        <select class="input-field">
+                            <option>Todas las temáticas</option>
+                            <option>Graduaciones</option>
+                            <option>Eventos Especiales</option>
+                            <option>Vida Estudiantil</option>
+                            <option>Profesores</option>
+                            <option>Infraestructura</option>
+                            <option>Logros Académicos</option>
+                        </select>
+                    </div>
+
+                    <!-- Contributor Filter -->
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-2">Contribuidor</label>
+                        <select class="input-field">
+                            <option>Todos los contribuidores</option>
+                            <option>Archivo Institucional</option>
+                            <option>Donaciones Alumni</option>
+                            <option>Profesores</option>
+                            <option>Estudiantes</option>
+                            <option>Comunidad</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collection Results -->
+    <section class="py-12 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Results Header -->
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8">
+                <div>
+                    <h2 class="font-crimson text-2xl font-semibold text-text-primary mb-2">Resultados de Búsqueda</h2>
+                    <p class="text-text-secondary">Mostrando 1,247 elementos de 2,543 total</p>
+                </div>
+                <div class="flex items-center space-x-4 mt-4 sm:mt-0">
+                    <label class="text-sm text-text-secondary">Ordenar por:</label>
+                    <select class="input-field w-auto">
+                        <option>Más Reciente</option>
+                        <option>Más Antiguo</option>
+                        <option>Alfabético A-Z</option>
+                        <option>Alfabético Z-A</option>
+                        <option>Más Popular</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Collection Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Collection Item 1 -->
+                <div class="card group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-lg mb-4">
+                        <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Graduación 1975" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                        <div class="absolute top-2 right-2 bg-primary text-white px-2 py-1 rounded text-xs">
+                            Fotografía
+                        </div>
+                    </div>
+                    <h3 class="font-crimson text-lg font-semibold text-text-primary mb-2">Ceremonia de Graduación 1975</h3>
+                    <p class="text-text-secondary text-sm mb-3">Promoción de técnicos mecánicos, ceremonia realizada en el salón principal con la presencia de autoridades educativas.</p>
+                    <div class="flex items-center justify-between text-xs text-text-secondary">
+                        <span>15 de diciembre, 1975</span>
+                        <div class="flex items-center space-x-2">
+                            <button class="text-accent hover:text-accent-600 transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                </svg>
+                            </button>
+                            <button class="text-accent hover:text-accent-600 transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Collection Item 2 -->
+                <div class="card group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-lg mb-4">
+                        <img src="https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Manual Técnico 1982" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                        <div class="absolute top-2 right-2 bg-success text-white px-2 py-1 rounded text-xs">
+                            Documento
+                        </div>
+                    </div>
+                    <h3 class="font-crimson text-lg font-semibold text-text-primary mb-2">Manual de Mecánica Industrial</h3>
+                    <p class="text-text-secondary text-sm mb-3">Manual técnico utilizado en las clases de mecánica industrial durante la década de 1980.</p>
+                    <div class="flex items-center justify-between text-xs text-text-secondary">
+                        <span>Marzo, 1982</span>
+                        <div class="flex items-center space-x-2">
+                            <button class="text-accent hover:text-accent-600 transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                </svg>
+                            </button>
+                            <button class="text-accent hover:text-accent-600 transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Collection Item 3 -->
+                <div class="card group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-lg mb-4">
+                        <img src="https://images.pixabay.com/photo/2016/11/29/06/15/audio-1867121_1280.jpg" alt="Testimonio Audio 1995" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                        <div class="absolute top-2 right-2 bg-warning text-white px-2 py-1 rounded text-xs">
+                            Audio
+                        </div>
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="font-crimson text-lg font-semibold text-text-primary mb-2">Testimonio del Prof. García</h3>
+                    <p class="text-text-secondary text-sm mb-3">Entrevista con el profesor de soldadura sobre la evolución de las técnicas industriales en la escuela.</p>
+                    <div class="flex items-center justify-between text-xs text-text-secondary">
+                        <span>8 de junio, 1995</span>
+                        <div class="flex items-center space-x-2">
+                            <span class="bg-secondary-100 px-2 py-1 rounded">12:34 min</span>
+                            <button class="text-accent hover:text-accent-600 transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Collection Item 4 -->
+                <div class="card group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-lg mb-4">
+                        <img src="https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Trofeo Competencia 2003" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                        <div class="absolute top-2 right-2 bg-accent text-white px-2 py-1 rounded text-xs">
+                            Memorabilia
+                        </div>
+                    </div>
+                    <h3 class="font-crimson text-lg font-semibold text-text-primary mb-2">Trofeo Olimpiada Técnica</h3>
+                    <p class="text-text-secondary text-sm mb-3">Primer lugar en la competencia provincial de proyectos técnicos estudiantiles.</p>
+                    <div class="flex items-center justify-between text-xs text-text-secondary">
+                        <span>22 de octubre, 2003</span>
+                        <div class="flex items-center space-x-2">
+                            <button class="text-accent hover:text-accent-600 transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                </svg>
+                            </button>
+                            <button class="text-accent hover:text-accent-600 transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Collection Item 5 -->
+                <div class="card group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-lg mb-4">
+                        <img src="https://images.pexels.com/photos/256541/pexels-photo-256541.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Revista Escolar 1988" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                        <div class="absolute top-2 right-2 bg-error text-white px-2 py-1 rounded text-xs">
+                            Publicación
+                        </div>
+                    </div>
+                    <h3 class="font-crimson text-lg font-semibold text-text-primary mb-2">Revista "El Técnico" N°12</h3>
+                    <p class="text-text-secondary text-sm mb-3">Edición especial dedicada a los avances en tecnología educativa y proyectos estudiantiles destacados.</p>
+                    <div class="flex items-center justify-between text-xs text-text-secondary">
+                        <span>Septiembre, 1988</span>
+                        <div class="flex items-center space-x-2">
+                            <span class="bg-secondary-100 px-2 py-1 rounded">24 páginas</span>
+                            <button class="text-accent hover:text-accent-600 transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Collection Item 6 -->
+                <div class="card group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-lg mb-4">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2922&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Video Documental 2010" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                        <div class="absolute top-2 right-2 bg-secondary-600 text-white px-2 py-1 rounded text-xs">
+                            Video
+                        </div>
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="font-crimson text-lg font-semibold text-text-primary mb-2">60 Años de Historia</h3>
+                    <p class="text-text-secondary text-sm mb-3">Documental conmemorativo del 60° aniversario de la institución con testimonios de egresados y profesores.</p>
+                    <div class="flex items-center justify-between text-xs text-text-secondary">
+                        <span>15 de mayo, 2010</span>
+                        <div class="flex items-center space-x-2">
+                            <span class="bg-secondary-100 px-2 py-1 rounded">45:20 min</span>
+                            <button class="text-accent hover:text-accent-600 transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-12">
+                <button class="btn-secondary">
+                    <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                    </svg>
+                    Cargar Más Elementos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Collections -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-crimson text-3xl font-semibold text-text-primary mb-4">Colecciones Destacadas</h2>
+                <p class="text-text-secondary max-w-2xl mx-auto">Explora nuestras colecciones temáticas curadas que destacan momentos importantes en la historia de nuestra institución.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Featured Collection 1 -->
+                <div class="card group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-lg mb-6">
+                        <img src="https://images.pixabay.com/photo/2016/03/27/07/32/education-1282104_1280.jpg" alt="Evolución Tecnológica" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <span class="bg-primary px-3 py-1 rounded-full text-sm">156 elementos</span>
+                        </div>
+                    </div>
+                    <h3 class="font-crimson text-xl font-semibold text-text-primary mb-3">Evolución Tecnológica</h3>
+                    <p class="text-text-secondary mb-4">Desde las primeras máquinas hasta la era digital: la transformación tecnológica en la educación técnica.</p>
+                    <a href="javascript:void(0)" class="text-accent hover:text-accent-600 font-medium transition-colors">
+                        Explorar Colección →
+                    </a>
+                </div>
+
+                <!-- Featured Collection 2 -->
+                <div class="card group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-lg mb-6">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Generaciones de Egresados" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <span class="bg-primary px-3 py-1 rounded-full text-sm">892 elementos</span>
+                        </div>
+                    </div>
+                    <h3 class="font-crimson text-xl font-semibold text-text-primary mb-3">Generaciones de Egresados</h3>
+                    <p class="text-text-secondary mb-4">Fotografías, testimonios y logros de las promociones que han pasado por nuestras aulas.</p>
+                    <a href="javascript:void(0)" class="text-accent hover:text-accent-600 font-medium transition-colors">
+                        Explorar Colección →
+                    </a>
+                </div>
+
+                <!-- Featured Collection 3 -->
+                <div class="card group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-lg mb-6">
+                        <img src="https://images.pexels.com/photos/1181533/pexels-photo-1181533.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Vida Estudiantil" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <span class="bg-primary px-3 py-1 rounded-full text-sm">324 elementos</span>
+                        </div>
+                    </div>
+                    <h3 class="font-crimson text-xl font-semibold text-text-primary mb-3">Vida Estudiantil</h3>
+                    <p class="text-text-secondary mb-4">Momentos cotidianos, eventos especiales y actividades que definen la experiencia estudiantil.</p>
+                    <a href="javascript:void(0)" class="text-accent hover:text-accent-600 font-medium transition-colors">
+                        Explorar Colección →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Contributions -->
+    <section class="py-16 bg-gradient-to-br from-accent-50 to-primary-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-crimson text-3xl font-semibold text-text-primary mb-4">Contribuciones de la Comunidad</h2>
+                <p class="text-text-secondary max-w-2xl mx-auto">Nuestra colección crece gracias a las donaciones y contribuciones de alumni, profesores y la comunidad educativa.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-crimson text-lg font-semibold text-text-primary mb-2">Comparte tu Historia</h3>
+                                <p class="text-text-secondary">Contribuye con fotografías, documentos o memorabilia que enriquezcan nuestro archivo histórico.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-crimson text-lg font-semibold text-text-primary mb-2">Testimonios Orales</h3>
+                                <p class="text-text-secondary">Graba tu testimonio sobre la vida escolar y contribuye a preservar la memoria institucional.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-success rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-crimson text-lg font-semibold text-text-primary mb-2">Verificación y Catalogación</h3>
+                                <p class="text-text-secondary">Nuestro equipo verifica y cataloga cada contribución para mantener la calidad del archivo.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <button class="btn-primary">
+                            <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                            </svg>
+                            Contribuir al Archivo
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card-elevated">
+                    <h3 class="font-crimson text-xl font-semibold text-text-primary mb-4">Estadísticas del Archivo</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="text-text-secondary">Total de Elementos</span>
+                            <span class="font-semibold text-text-primary">2,543</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-text-secondary">Fotografías</span>
+                            <span class="font-semibold text-text-primary">1,247</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-text-secondary">Documentos</span>
+                            <span class="font-semibold text-text-primary">856</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-text-secondary">Audio/Video</span>
+                            <span class="font-semibold text-text-primary">234</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-text-secondary">Memorabilia</span>
+                            <span class="font-semibold text-text-primary">206</span>
+                        </div>
+                        <div class="border-t border-border pt-4 mt-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-text-secondary">Contribuidores</span>
+                                <span class="font-semibold text-text-primary">127</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Brand -->
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-crimson text-lg font-semibold">Museo Digital EETPN°470</h3>
+                            <p class="text-secondary-300 text-sm">Nicolás Avellaneda</p>
+                        </div>
+                    </div>
+                    <p class="text-secondary-300 mb-4">Preservando nuestra herencia educativa y conectando generaciones a través de la tecnología digital.</p>
+                    <div class="flex space-x-4">
+                        <a href="javascript:void(0)" class="text-secondary-300 hover:text-white transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="text-secondary-300 hover:text-white transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="text-secondary-300 hover:text-white transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-crimson text-lg font-semibold mb-4">Enlaces Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="text-secondary-300 hover:text-white transition-colors">Inicio</a></li>
+                        <li><a href="digital_collections.html" class="text-secondary-300 hover:text-white transition-colors">Colecciones</a></li>
+                        <li><a href="school_history.html" class="text-secondary-300 hover:text-white transition-colors">Historia</a></li>
+                        <li><a href="educational_resources.html" class="text-secondary-300 hover:text-white transition-colors">Recursos</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-crimson text-lg font-semibold mb-4">Contacto</h4>
+                    <ul class="space-y-2 text-secondary-300">
+                        <li>museo@eetpn470.edu.ar</li>
+                        <li>+54 (0341) 123-4567</li>
+                        <li>Lunes a Viernes<br />9:00 - 17:00</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-secondary-700 mt-8 pt-8 text-center text-secondary-300">
+                <p>&copy; 2025 Museo Digital EETPN°470 Nicolás Avellaneda. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

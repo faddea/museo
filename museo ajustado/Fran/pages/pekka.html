@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sección con Video en Ciclo Reverso</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <style>
+        /* Estilo personalizado para asegurar que la sección inicialmente esté oculta para la animación de GSAP */
+        .initial-hidden {
+            opacity: 0;
+            transform: translateY(20px); 
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <section id="main-section" class="bg-white p-8 md:p-16 initial-hidden">
+        
+        <h2 class="text-4xl font-bold text-gray-800 text-center mb-8">
+            ¡Ciclo de Video Infinito (Adelante y Reversa)! 🔄
+        </h2>
+
+        <div class="max-w-4xl mx-auto shadow-xl rounded-lg overflow-hidden">
+            
+            <video 
+                id="auto-video"
+                class="w-full h-auto" 
+                autoplay 
+                muted 
+                playsinline
+                preload="auto"
+                loop="false" >
+                <source src="URL_DE_TU_VIDEO.mp4" type="video/mp4">
+                Tu navegador no soporta la etiqueta de video.
+            </video>
+
+        </div>
+
+        <p class="text-center text-gray-600 mt-4">
+            El ciclo de reproducción (adelante y atrás) es manejado por **JavaScript** y **GSAP**.
+        </p>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const videoElement = document.getElementById('auto-video');
+            let isForward = true; // Estado para saber si estamos yendo hacia adelante o hacia atrás
+            let intervalRewind;
+
+            // --- 1. Animación de GSAP (Carga de la Sección) ---
+            gsap.to("#main-section", {
+                opacity: 1, 
+                y: 0, 
+                duration: 1.5, 
+                ease: "power3.out"
+            });
+            
+            // --- 2. Lógica del Ciclo de Video (Adelante y Reversa) ---
+
+            /**
+             * Función para iniciar la reproducción en reversa.
+             */
+            function startRewind() {
+                isForward = false;
+                // Detenemos la reproducción normal del video
+                videoElement.pause(); 
+                
+                // Usamos un intervalo para retroceder el tiempo del video
+                // 30ms es un buen valor para un retroceso suave (33ms = 30fps)
+                intervalRewind = setInterval(() => {
+                    if (videoElement.currentTime <= 0) {
+                        // Si llega al inicio (0 segundos), paramos la reversa
+                        clearInterval(intervalRewind);
+                        isForward = true;
+                        videoElement.play(); // Empezamos a avanzar de nuevo
+                    } else {
+                        // Retrocede 0.03 segundos
+                        videoElement.currentTime -= 0.03; 
+                    }
+                }, 30); // 30 milisegundos
+            }
+
+            /**
+             * Evento que se dispara cuando el video ha terminado su reproducción normal (hacia adelante).
+             */
+            videoElement.addEventListener('ended', () => {
+                if (isForward) {
+                    startRewind();
+                }
+            });
+
+            /**
+             * Evento que se dispara al cargar la metadata para asegurar el inicio.
+             */
+            videoElement.addEventListener('loadedmetadata', () => {
+                // Intentamos reproducir el video para iniciar el ciclo
+                videoElement.play().catch(error => {
+                    console.log("El autoplay falló, iniciando en 0.", error);
+                });
+            });
+
+            // Si el usuario pausa o interactúa, detenemos cualquier proceso de reversa activo
+            videoElement.addEventListener('pause', () => {
+                if (!isForward) {
+                    clearInterval(intervalRewind);
+                }
+            });
+
+            videoElement.addEventListener('play', () => {
+                if (isForward && intervalRewind) {
+                    clearInterval(intervalRewind); // Aseguramos que el intervalo de reversa esté limpio
+                }
+            });
+        });
+    </script>
+</body>
+</html>

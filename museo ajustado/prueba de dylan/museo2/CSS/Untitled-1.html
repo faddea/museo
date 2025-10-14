@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo Tailwind Personalizado</title>
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Estilos personalizados -->
+  <style>
+    /* Pega aquí todo tu CSS personalizado que compartiste */
+    :root {
+      --color-primary: #1e40af; 
+      --color-primary-50: #eff6ff;
+      --color-primary-100: #dbeafe;
+      --color-primary-200: #bfdbfe;
+      --color-primary-300: #93c5fd;
+      --color-primary-400: #60a5fa;
+      --color-primary-500: #3b82f6;
+      --color-primary-600: #2563eb;
+      --color-primary-700: #1d4ed8;
+      --color-primary-800: #1e40af;
+      --color-primary-900: #1e3a8a;
+
+      --color-secondary: #64748b;
+      --color-secondary-50: #f8fafc;
+      --color-secondary-100: #f1f5f9;
+      --color-secondary-200: #e2e8f0;
+      --color-secondary-300: #cbd5e1;
+      --color-secondary-400: #94a3b8;
+      --color-secondary-500: #64748b;
+      --color-secondary-600: #475569;
+      --color-secondary-700: #334155;
+      --color-secondary-800: #1e293b;
+      --color-secondary-900: #0f172a;
+
+      --color-accent: #0ea5e9;
+      --color-accent-50: #f0f9ff;
+      --color-accent-100: #e0f2fe;
+      --color-accent-200: #bae6fd;
+      --color-accent-300: #7dd3fc;
+      --color-accent-400: #38bdf8;
+      --color-accent-500: #0ea5e9;
+      --color-accent-600: #0284c7;
+      --color-accent-700: #0369a1;
+      --color-accent-800: #075985;
+      --color-accent-900: #0c4a6e;
+
+      --color-background: #fefefe;
+      --color-surface: #f8fafc;
+
+      --color-text-primary: #1e293b;
+      --color-text-secondary: #64748b;
+
+      --color-success: #059669;
+      --color-success-50: #ecfdf5;
+      --color-success-100: #d1fae5;
+      --color-success-500: #10b981;
+
+      --color-warning: #d97706;
+      --color-warning-50: #fffbeb;
+      --color-warning-100: #fef3c7;
+      --color-warning-500: #f59e0b;
+
+      --color-error: #dc2626;
+      --color-error-50: #fef2f2;
+      --color-error-100: #fee2e2;
+      --color-error-500: #ef4444;
+
+      --color-border: #e2e8f0;
+      --color-border-light: #f1f5f9;
+
+      --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.1);
+      --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.15);
+      --shadow-modal: 0 10px 25px rgba(0, 0, 0, 0.2);
+
+      --transition-smooth: 300ms ease-in-out;
+      --transition-quick: 200ms ease-in-out;
+    }
+
+    @layer base {
+      body {
+        font-family: 'Inter', sans-serif;
+        color: var(--color-text-primary);
+        background-color: var(--color-background);
+        line-height: 1.6;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Crimson Text', serif;
+        font-weight: 600;
+        line-height: 1.3;
+      }
+      .font-crimson { font-family: 'Crimson Text', serif; }
+      .font-inter { font-family: 'Inter', sans-serif; }
+    }
+
+    @layer components {
+      .btn-primary {
+        @apply bg-primary text-white px-6 py-3 rounded-lg font-inter font-semibold transition-all duration-300 hover:bg-primary-700 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+      }
+      .btn-secondary {
+        @apply bg-secondary-100 text-secondary-700 px-6 py-3 rounded-lg font-inter font-semibold transition-all duration-300 hover:bg-secondary-200 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2;
+      }
+      .btn-accent {
+        @apply bg-accent text-white px-6 py-3 rounded-lg font-inter font-semibold transition-all duration-300 hover:bg-accent-600 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2;
+      }
+      .card {
+        @apply bg-white rounded-lg p-6 shadow-subtle transition-all duration-300 hover:shadow-card;
+      }
+      .card-elevated { @apply bg-white rounded-lg p-6 shadow-card; }
+      .input-field {
+        @apply w-full px-4 py-3 border border-border rounded-lg font-inter text-text-primary placeholder-text-secondary focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-200;
+      }
+      .section-divider { @apply bg-surface py-1; }
+      .text-heading { @apply font-crimson font-semibold text-text-primary; }
+      .text-body { @apply font-inter text-text-primary; }
+      .text-caption { @apply font-inter text-text-secondary text-sm; }
+      .smooth-transition { transition: all var(--transition-smooth); }
+      .quick-transition { transition: all var(--transition-quick); }
+    }
+
+    @layer utilities {
+      .shadow-subtle { box-shadow: var(--shadow-subtle); }
+      .shadow-card { box-shadow: var(--shadow-card); }
+      .shadow-modal { box-shadow: var(--shadow-modal); }
+      .parallax { transform: translateZ(0); will-change: transform; }
+      .scroll-reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+      .scroll-reveal.revealed { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="p-6">
+
+  <header class="mb-8">
+    <h1 class="text-heading text-3xl mb-2">Demo Tailwind Personalizado</h1>
+    <p class="text-body text-lg">Ejemplo de botones, tarjetas e inputs usando tu configuración CSS.</p>
+  </header>
+
+  <section class="mb-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+    <button class="btn-primary">Botón Primario</button>
+    <button class="btn-secondary">Botón Secundario</button>
+    <button class="btn-accent">Botón Acento</button>
+  </section>
+
+  <section class="mb-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="card">
+      <h2 class="text-heading text-xl mb-2">Tarjeta Simple</h2>
+      <p class="text-body">Esta tarjeta usa la clase <code>card</code> con sombra sutil y transición al pasar el mouse.</p>
+    </div>
+    <div class="card-elevated">
+      <h2 class="text-heading text-xl mb-2">Tarjeta Elevada</h2>
+      <p class="text-body">Esta tarjeta usa <code>card-elevated</code> para sombra fija más pronunciada.</p>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <label class="text-body font-semibold mb-2 block" for="nombre">Nombre</label>
+    <input type="text" id="nombre" placeholder="Ingresa tu nombre" class="input-field">
+  </section>
+
+  <section>
+    <div class="section-divider mb-4"></div>
+    <p class="text-caption">Pie de sección o nota complementaria</p>
+  </section>
+
+</body>
+</html>
