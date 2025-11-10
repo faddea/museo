@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fuelle de Fragua - Museo Digital</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/x-icon" href="/images.ico">
+    <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .fade-in {
+      animation: fadeIn 1.2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(1.02); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body class="bg-black text-white font-sans">
+
+  <!-- Imagen y texto -->
+  <section class="relative fade-in h-screen flex items-end justify-start">
+    <img src="mvid1.jpg" alt="Fuelle de Fragua" class="absolute inset-0 w-full h-full object-cover opacity-90">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
+
+    <div class="relative z-10 p-10 max-w-3xl">
+      <h1 class="text-4xl font-bold mb-4">Fuelle de Fragua</h1>
+      <p class="text-gray-200 mb-5 text-lg leading-relaxed">
+        El <strong>fuelle de fragua</strong> es una herramienta tradicional utilizada desde la antigüedad para inyectar aire a presión y avivar el fuego en fraguas y hornos de herrería. 
+        Su función era esencial para alcanzar altas temperaturas necesarias para moldear y forjar el metal.
+      </p>
+      <p class="text-gray-300 mb-6 text-base">
+        Fabricado en cuero y madera, su diseño permitía comprimir y liberar aire mediante un sistema de válvulas simples. 
+        Este mecanismo fue clave en los talleres de herrería y mecánica, tanto artesanales como industriales.
+      </p>
+      <p class="text-gray-400 mb-8 text-base">
+        En la educación técnica, el fuelle de fragua simboliza los primeros pasos de la enseñanza del trabajo manual y la transmisión del conocimiento práctico. 
+        Representa el vínculo entre la tradición artesanal y la innovación tecnológica.
+      </p>
+
+      <!-- Botones -->
+      <div class="flex items-center gap-4">
+        <button id="audioBtn" class="bg-blue-600 text-white px-5 py-3 rounded-full font-semibold shadow-lg hover:bg-blue-700 transition transform hover:scale-105">
+          🔊 Reproducir audio informativo
+        </button>
+        <a href="todas_exposiciones.html" class="bg-white text-black px-5 py-3 rounded-md font-semibold hover:bg-gray-200 transition">
+          ← Volver
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Script de audio -->
+  <script>
+    const botonAudio = document.getElementById("audioBtn");
+    const texto = `
+      El fuelle de fragua es una herramienta antigua usada por los herreros para avivar el fuego. 
+      Gracias a su mecanismo de aire a presión, permitió moldear metales y fabricar herramientas. 
+      En los talleres técnicos, representa los orígenes del aprendizaje manual y la historia del trabajo artesanal.
+    `;
+    botonAudio.addEventListener("click", () => {
+      const mensaje = new SpeechSynthesisUtterance(texto);
+      mensaje.lang = "es-ES";
+      mensaje.rate = 1;
+      speechSynthesis.cancel();
+      speechSynthesis.speak(mensaje);
+    });
+  </script>
+
+</body>
+</html>

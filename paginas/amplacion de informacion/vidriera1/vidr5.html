@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Balanzas de Precisión - Museo Digital</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/x-icon" href="/images.ico">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="font-sans bg-gray-900 text-white">
+
+  <section class="relative h-screen flex items-center justify-start bg-cover bg-center" style="background-image: url('vid5.jpg');">
+    <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-transparent"></div>
+
+    <div class="relative z-10 max-w-3xl px-10 md:px-20">
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-6">Balanzas de Precisión</h1>
+
+      <p class="text-lg mb-4 text-gray-200 leading-relaxed">
+        Las <strong>balanzas de precisión</strong> fueron utilizadas en laboratorios científicos para medir masas diminutas
+        con exactitud. Estos instrumentos mecánicos estaban equipados con brazos y pesas calibradas que permitían obtener
+        resultados confiables incluso con diferencias mínimas de peso.
+      </p>
+
+      <p class="text-lg mb-4 text-gray-200 leading-relaxed">
+        Durante los siglos XIX y XX, fueron esenciales para la investigación en física, química y metalurgia,
+        y marcaron un paso fundamental hacia la medición científica exacta.
+      </p>
+
+      <p class="text-lg text-gray-200 mb-10 leading-relaxed">
+        Hoy, las versiones electrónicas de las balanzas mantienen su legado, pero las originales siguen siendo símbolos
+        de precisión, equilibrio y rigor experimental.
+      </p>
+
+      <div class="flex gap-4">
+        <button id="audioBtn" class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-md font-semibold shadow-md transition">
+          🔊 Reproducir audio informativo
+        </button>
+        <a href="index.html" class="bg-white text-black font-semibold px-5 py-3 rounded-md shadow-md hover:bg-gray-200 transition">← Volver</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const texto = `
+      Las balanzas de precisión permitieron medir masas diminutas con gran exactitud.
+      Fueron herramientas esenciales en la física y la química moderna y representan la búsqueda de precisión en la ciencia.
+    `;
+    document.getElementById("audioBtn").addEventListener("click", () => {
+      const mensaje = new SpeechSynthesisUtterance(texto);
+      mensaje.lang = "es-ES";
+      mensaje.rate = 1;
+      speechSynthesis.cancel();
+      speechSynthesis.speak(mensaje);
+    });
+  </script>
+
+</body>
+</html>

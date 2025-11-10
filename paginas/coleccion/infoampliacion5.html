@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unidad de Disco BASF - Museo Digital</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/x-icon" href="/images.ico">
+    <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .fade-in {
+      animation: fadeIn 1.2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(1.02); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body class="bg-black text-white font-sans">
+
+  <!-- Imagen de fondo con texto informativo -->
+  <section class="relative fade-in h-screen flex items-end justify-start">
+    <img src="inf5.jpeg" alt="Unidad de Disco BASF" class="absolute inset-0 w-full h-full object-cover opacity-90">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
+
+    <div class="relative z-10 p-10 max-w-3xl">
+      <h1 class="text-4xl font-bold mb-4">Unidad de Disco BASF</h1>
+      <p class="text-gray-200 mb-5 text-lg leading-relaxed">
+        La <strong>Unidad de Disco BASF</strong> fue un componente esencial en los sistemas de almacenamiento informático de mediados del siglo XX. 
+        Diseñada por la compañía alemana BASF, permitió grabar y leer información en discos magnéticos de gran tamaño y capacidad.
+      </p>
+      <p class="text-gray-300 mb-6 text-base">
+        Este tipo de unidad era utilizada en computadoras industriales y académicas durante las décadas de 1970 y 1980. 
+        Su funcionamiento se basaba en un sistema de lectura magnética rotativa que permitía almacenar datos en discos intercambiables, 
+        marcando un paso clave hacia la evolución de los discos duros modernos.
+      </p>
+      <p class="text-gray-400 mb-8 text-base">
+        En las escuelas técnicas, las Unidades BASF se usaban como herramientas didácticas para enseñar conceptos de almacenamiento masivo, 
+        electrónica aplicada y arquitectura de sistemas. Representan una época donde la informática comenzaba a consolidarse como una ciencia práctica y tangible.
+      </p>
+
+      <!-- Botones -->
+      <div class="flex items-center gap-4">
+        <button id="audioBtn" class="bg-blue-600 text-white px-5 py-3 rounded-full font-semibold shadow-lg hover:bg-blue-700 transition transform hover:scale-105">
+          🔊 Reproducir audio informativo
+        </button>
+        <a href="expo_informatica.html" class="bg-white text-black px-5 py-3 rounded-md font-semibold hover:bg-gray-200 transition">
+          ← Volver
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Script de audio -->
+  <script>
+    const botonAudio = document.getElementById("audioBtn");
+    const texto = `
+      La unidad de disco BASF fue una de las primeras máquinas de almacenamiento magnético utilizadas en grandes computadoras. 
+      Su capacidad para guardar información en discos giratorios marcó el inicio de los sistemas de almacenamiento modernos. 
+      Estas unidades eran robustas, precisas y fundamentales en la evolución tecnológica de la informática.
+    `;
+    botonAudio.addEventListener("click", () => {
+      const mensaje = new SpeechSynthesisUtterance(texto);
+      mensaje.lang = "es-ES";
+      mensaje.rate = 1;
+      speechSynthesis.cancel();
+      speechSynthesis.speak(mensaje);
+    });
+  </script>
+
+</body>
+</html>

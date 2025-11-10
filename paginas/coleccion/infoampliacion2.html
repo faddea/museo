@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disquete / Disco Flexible y Manual de Software - Museo Digital</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/x-icon" href="/images.ico">
+    <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .fade-in {
+      animation: fadeIn 1.2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(1.02); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body class="bg-black text-white font-sans">
+
+  <!-- Imagen de fondo con texto -->
+  <section class="relative fade-in h-screen flex items-end justify-start">
+    <img src="inf2.jpeg" alt="Disquete y Manual de Software" class="absolute inset-0 w-full h-full object-cover opacity-90">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
+
+    <div class="relative z-10 p-10 max-w-3xl">
+      <h1 class="text-4xl font-bold mb-4">Disquete / Disco Flexible y Manual de Software</h1>
+      <p class="text-gray-200 mb-5 text-lg leading-relaxed">
+        El <strong>disquete</strong>, o disco flexible, fue uno de los primeros medios portátiles de almacenamiento masivo. 
+        Creado por IBM en 1971, su diseño de 8 pulgadas permitió grabar datos y transportarlos fácilmente, marcando un hito en la historia de la informática. 
+        Con el tiempo surgieron versiones más pequeñas de 5¼ y 3½ pulgadas, que dominaron el mercado hasta la llegada de los CD-ROM y los discos duros modernos.
+      </p>
+      <p class="text-gray-300 mb-6 text-base">
+        Los <strong>manuales de software</strong> que lo acompañaban servían para guiar a los usuarios en la instalación y manejo de programas. 
+        En la educación técnica, estos materiales fueron fundamentales para el aprendizaje práctico de computación durante las décadas de 1980 y 1990.
+      </p>
+
+      <!-- Botones -->
+      <div class="flex items-center gap-4">
+        <button id="audioBtn" class="bg-blue-600 text-white px-5 py-3 rounded-full font-semibold shadow-lg hover:bg-blue-700 transition transform hover:scale-105">
+          🔊 Reproducir audio informativo
+        </button>
+        <a href="expo_informatica.html" class="bg-white text-black px-5 py-3 rounded-md font-semibold hover:bg-gray-200 transition">
+          ← Volver
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Script de audio -->
+  <script>
+    const botonAudio = document.getElementById("audioBtn");
+    const texto = `
+      El disquete o disco flexible fue uno de los principales medios de almacenamiento digital 
+      desde la década de 1970 hasta los años 90. Creado por IBM, permitió transportar programas 
+      e información entre computadoras personales. Junto a los manuales de software impresos, 
+      formaron parte esencial de la educación técnica y el aprendizaje informático de la época.
+    `;
+    botonAudio.addEventListener("click", () => {
+      const mensaje = new SpeechSynthesisUtterance(texto);
+      mensaje.lang = "es-ES";
+      mensaje.rate = 1;
+      speechSynthesis.cancel();
+      speechSynthesis.speak(mensaje);
+    });
+  </script>
+
+</body>
+</html>

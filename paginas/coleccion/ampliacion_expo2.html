@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todas las Exposiciones - Museo Digital</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/x-icon" href="/images.ico">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-gray-50 text-black font-sans">
+
+   <!-- NAVBAR -->
+  <div id="navbar-placeholder"></div>
+  <script>
+    fetch("/navbar.html")
+      .then(response => {
+              if (!response.ok) {
+                  throw new Error('Error al cargar navbar.html');
+              }
+              return response.text();
+          })
+          .then(data => {
+            // 1. Insertar el HTML de la barra de navegación
+            document.getElementById("navbar-placeholder").innerHTML = data;
+
+            // 2. UNA VEZ INSERTADO, AÑADIR LA FUNCIONALIDAD DEL MENÚ
+
+            const menuButton = document.getElementById('menu-button');
+            const closeMenu = document.getElementById('close-menu');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const overlay = document.getElementById('overlay');
+
+            if (menuButton && mobileMenu) {
+                // Función para ABRIR el menú
+                menuButton.addEventListener('click', () => {
+                    mobileMenu.classList.remove('translate-x-full');
+                    overlay.classList.remove('hidden');
+                });
+
+                // Función para CERRAR el menú
+                const closeMenuFunction = () => {
+                    mobileMenu.classList.add('translate-x-full');
+                    overlay.classList.add('hidden');
+                };
+
+                closeMenu.addEventListener('click', closeMenuFunction);
+                overlay.addEventListener('click', closeMenuFunction);
+                
+                // Opcional: Cerrar menú al hacer clic en un enlace
+                document.querySelectorAll('#mobile-menu a').forEach(link => {
+                    link.addEventListener('click', closeMenuFunction);
+                });
+
+            } else {
+                 console.error("Los elementos del menú no se encontraron en el HTML cargado.");
+            }
+          })
+          .catch(error => {
+              console.error("Hubo un error cargando la navbar:", error);
+              // NOTA: Si ves este error, asegúrate de que estás ejecutando el 
+              // archivo a través de un servidor local (ej: Live Server de VS Code). 
+              // El 'fetch' no suele funcionar en archivos locales (file://).
+          });
+  </script>
+
+  <!-- Encabezado -->
+  <section class="text-center py-16 bg-white border-b border-gray-200 shadow-sm">
+    <h1 class="text-4xl font-bold text-black mb-3">Todas las Exposiciones</h1>
+    <p class="max-w-3xl mx-auto text-gray-700 text-lg">
+      Explora todas las exposiciones del Museo Digital que reflejan historia, innovación y evolución técnica.
+    </p>
+  </section>
+
+  <!-- Contenedor principal -->
+  <main class="max-w-5xl mx-auto px-6 py-12 space-y-10">
+
+    <!-- Exposición 1 -->
+    <section class="relative rounded-xl overflow-hidden shadow-lg">
+      <img src="vid1.jpg" alt="Generador de Van de Graaff" class="w-full h-80 object-cover">
+      <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-6 text-white">
+        <h2 class="text-2xl font-bold mb-2">Generador de Van de Graaff</h2>
+        <p class="text-sm mb-4">Dispositivo usado en física para demostrar fenómenos de electricidad estática.</p>
+        <a href="vidr1.html" class="inline-block bg-white text-black px-4 py-2 rounded-md font-semibold hover:bg-gray-200 transition">Ver más</a>
+      </div>
+    </section>
+
+    <!-- Exposición 2 -->
+    <section class="relative rounded-xl overflow-hidden shadow-lg">
+      <img src="vid2.jpg" alt="Instrumentos de Laboratorio" class="w-full h-80 object-cover">
+      <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-6 text-white">
+        <h2 class="text-2xl font-bold mb-2">Instrumentos de Laboratorio</h2>
+        <p class="text-sm mb-4">Balanzas, galvanómetros y equipos de medición usados en física aplicada.</p>
+        <a href="vidr2.html" class="inline-block bg-white text-black px-4 py-2 rounded-md font-semibold hover:bg-gray-200 transition">Ver más</a>
+      </div>
+    </section>
+
+    <!-- Exposición 3 -->
+    <section class="relative rounded-xl overflow-hidden shadow-lg">
+      <img src="vid3.jpg" alt="Medidores Analógicos" class="w-full h-80 object-cover">
+      <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-6 text-white">
+        <h2 class="text-2xl font-bold mb-2">Medidores Analógicos</h2>
+        <p class="text-sm mb-4">Voltímetros y amperímetros antiguos empleados en los talleres eléctricos.</p>
+        <a href="vidr3.html" class="inline-block bg-white text-black px-4 py-2 rounded-md font-semibold hover:bg-gray-200 transition">Ver más</a>
+      </div>
+    </section>
+
+    <!-- Exposición 4 -->
+    <section class="relative rounded-xl overflow-hidden shadow-lg">
+      <img src="vid4.jpeg" alt="Resistencias de Laboratorio" class="w-full h-80 object-cover">
+      <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-6 text-white">
+        <h2 class="text-2xl font-bold mb-2">Resistencias de Laboratorio</h2>
+        <p class="text-sm mb-4">Equipos usados para el estudio de la Ley de Ohm y circuitos básicos.</p>
+        <a href="vidr4.html" class="inline-block bg-white text-black px-4 py-2 rounded-md font-semibold hover:bg-gray-200 transition">Ver más</a>
+      </div>
+    </section>
+
+    <!-- Exposición 5 -->
+    <section class="relative rounded-xl overflow-hidden shadow-lg">
+      <img src="vid5.jpg" alt="Balanzas de Precisión" class="w-full h-80 object-cover">
+      <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-6 text-white">
+        <h2 class="text-2xl font-bold mb-2">Balanzas de Precisión</h2>
+        <p class="text-sm mb-4">Instrumentos de alta precisión utilizados para medir masa y peso.</p>
+        <a href="vidr5.html" class="inline-block bg-white text-black px-4 py-2 rounded-md font-semibold hover:bg-gray-200 transition">Ver más</a>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyector de Diapositivas - Museo Digital</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/x-icon" href="/images.ico">
+    <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .fade-in {
+      animation: fadeIn 1.2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(1.02); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body class="bg-black text-white font-sans">
+
+  <!-- Sección principal -->
+  <section class="relative fade-in h-screen flex items-end justify-start">
+    <img src="mvid3.jpg" alt="Proyector de Diapositivas" class="absolute inset-0 w-full h-full object-cover opacity-90">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
+
+    <div class="relative z-10 p-10 max-w-3xl">
+      <h1 class="text-4xl font-bold mb-4">Proyector de Diapositivas</h1>
+
+      <p class="text-gray-200 mb-5 text-lg leading-relaxed">
+        El <strong>Proyector de Diapositivas</strong> fue un dispositivo audiovisual ampliamente utilizado en instituciones educativas durante las décadas de 1960 a 1990. 
+        Permitía proyectar imágenes fijas, conocidas como diapositivas, sobre una pantalla o pared mediante una fuente de luz intensa y un sistema óptico de lentes.
+      </p>
+
+      <p class="text-gray-300 mb-6 text-base">
+        Estas diapositivas, generalmente en formato de 35 mm, se creaban a partir de fotografías o transparencias educativas. 
+        Su uso transformó la forma de enseñar, permitiendo a los docentes complementar sus explicaciones con recursos visuales claros y llamativos.
+      </p>
+
+      <p class="text-gray-400 mb-8 text-base">
+        En las escuelas técnicas, el proyector de diapositivas fue una herramienta esencial para mostrar planos, esquemas, procesos y diagramas. 
+        Aunque hoy ha sido reemplazado por proyectores digitales, su legado persiste como símbolo del avance de la tecnología educativa del siglo XX.
+      </p>
+
+      <!-- Botones -->
+      <div class="flex items-center gap-4">
+        <button id="audioBtn" class="bg-blue-600 text-white px-5 py-3 rounded-full font-semibold shadow-lg hover:bg-blue-700 transition transform hover:scale-105">
+          🔊 Reproducir audio informativo
+        </button>
+        <a href="todas_exposiciones.html" class="bg-white text-black px-5 py-3 rounded-md font-semibold hover:bg-gray-200 transition">
+          ← Volver
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Script de audio -->
+  <script>
+    const botonAudio = document.getElementById("audioBtn");
+    const texto = `
+      El proyector de diapositivas fue una herramienta muy usada en las escuelas y universidades del siglo veinte.
+      Permitía proyectar imágenes fijas para apoyar las clases con material visual. 
+      Gracias a su uso, la enseñanza se volvió más dinámica y visual, siendo un paso previo a los proyectores digitales modernos.
+    `;
+    botonAudio.addEventListener("click", () => {
+      const mensaje = new SpeechSynthesisUtterance(texto);
+      mensaje.lang = "es-ES";
+      mensaje.rate = 1;
+      speechSynthesis.cancel();
+      speechSynthesis.speak(mensaje);
+    });
+  </script>
+
+</body>
+</html>

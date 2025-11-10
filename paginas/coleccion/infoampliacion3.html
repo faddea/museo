@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disco Magnético BASF - Museo Digital</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/x-icon" href="/images.ico">
+    <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .fade-in {
+      animation: fadeIn 1.2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(1.02); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body class="bg-black text-white font-sans">
+
+  <!-- Imagen de fondo con información -->
+  <section class="relative fade-in h-screen flex items-end justify-start">
+    <img src="inf3.jpeg" alt="Disco Magnético BASF" class="absolute inset-0 w-full h-full object-cover opacity-90">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
+
+    <div class="relative z-10 p-10 max-w-3xl">
+      <h1 class="text-4xl font-bold mb-4">Disco Magnético BASF</h1>
+      <p class="text-gray-200 mb-5 text-lg leading-relaxed">
+        El <strong>Disco Magnético BASF</strong> fue una pieza clave en la historia del almacenamiento de datos. 
+        Creado durante las décadas de 1970 y 1980, estos discos eran utilizados en mainframes y grandes computadoras 
+        industriales para guardar información crítica de empresas e instituciones educativas.
+      </p>
+      <p class="text-gray-300 mb-6 text-base">
+        Fabricado por la empresa alemana <strong>BASF</strong>, este tipo de soporte podía almacenar varios megabytes de información, 
+        una cifra impresionante para la época. Su sistema magnético de grabación giratoria fue precursor de las futuras unidades de disco duro (HDD).
+      </p>
+      <p class="text-gray-400 mb-8 text-base">
+        En los talleres técnicos, estos discos servían como ejemplo práctico del funcionamiento de los sistemas de almacenamiento, 
+        enseñando a los alumnos los principios de la lectura y escritura de datos magnéticos, una base esencial para la informática moderna.
+      </p>
+
+      <!-- Botones -->
+      <div class="flex items-center gap-4">
+        <button id="audioBtn" class="bg-blue-600 text-white px-5 py-3 rounded-full font-semibold shadow-lg hover:bg-blue-700 transition transform hover:scale-105">
+          🔊 Reproducir audio informativo
+        </button>
+        <a href="expo_informatica.html" class="bg-white text-black px-5 py-3 rounded-md font-semibold hover:bg-gray-200 transition">
+          ← Volver
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Script de audio -->
+  <script>
+    const botonAudio = document.getElementById("audioBtn");
+    const texto = `
+      El disco magnético BASF fue uno de los primeros dispositivos de almacenamiento masivo. 
+      Utilizado en grandes computadoras industriales durante los años setenta y ochenta, 
+      permitía guardar grandes volúmenes de información mediante magnetismo. 
+      Su diseño inspiró la creación de los discos duros modernos, marcando un avance crucial en la evolución tecnológica.
+    `;
+    botonAudio.addEventListener("click", () => {
+      const mensaje = new SpeechSynthesisUtterance(texto);
+      mensaje.lang = "es-ES";
+      mensaje.rate = 1;
+      speechSynthesis.cancel();
+      speechSynthesis.speak(mensaje);
+    });
+  </script>
+
+</body>
+</html>

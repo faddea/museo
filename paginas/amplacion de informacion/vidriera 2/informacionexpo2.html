@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Máquina de Wimshurst - Museo Digital</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/x-icon" href="/images.ico">
+    <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .fade-in {
+      animation: fadeIn 1.2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(1.02); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body class="bg-black text-white font-sans">
+
+  <!-- Sección principal -->
+  <section class="relative fade-in h-screen flex items-end justify-start">
+    <img src="mvid2.jpg" alt="Máquina de Wimshurst" class="absolute inset-0 w-full h-full object-cover opacity-90">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
+
+    <div class="relative z-10 p-10 max-w-3xl">
+      <h1 class="text-4xl font-bold mb-4">Máquina de Wimshurst</h1>
+
+      <p class="text-gray-200 mb-5 text-lg leading-relaxed">
+        La <strong>Máquina de Wimshurst</strong> es un generador electrostático inventado a finales del siglo XIX por el científico británico James Wimshurst. 
+        Este dispositivo fue diseñado para producir altas tensiones de electricidad estática mediante un sistema de discos giratorios que se cargan por influencia eléctrica.
+      </p>
+
+      <p class="text-gray-300 mb-6 text-base">
+        Fue utilizada ampliamente en demostraciones educativas y experimentos científicos, 
+        permitiendo observar fenómenos eléctricos como chispas, descargas o la carga de condensadores. 
+        Su diseño elegante y funcional la convirtió en una herramienta esencial en laboratorios de física y en la enseñanza de la electricidad.
+      </p>
+
+      <p class="text-gray-400 mb-8 text-base">
+        Esta máquina simboliza el ingenio tecnológico de la época victoriana y marcó un paso importante en la comprensión de la electricidad. 
+        Hoy en día, sigue siendo una pieza didáctica fundamental para ilustrar los principios de la carga y descarga eléctrica en museos y escuelas técnicas.
+      </p>
+
+      <!-- Botones -->
+      <div class="flex items-center gap-4">
+        <button id="audioBtn" class="bg-blue-600 text-white px-5 py-3 rounded-full font-semibold shadow-lg hover:bg-blue-700 transition transform hover:scale-105">
+          🔊 Reproducir audio informativo
+        </button>
+        <a href="todas_exposiciones.html" class="bg-white text-black px-5 py-3 rounded-md font-semibold hover:bg-gray-200 transition">
+          ← Volver
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Script de audio -->
+  <script>
+    const botonAudio = document.getElementById("audioBtn");
+    const texto = `
+      La máquina de Wimshurst fue un generador de electricidad estática creado en el siglo diecinueve. 
+      Utilizaba discos giratorios para producir chispas y altas tensiones. 
+      Era una herramienta muy usada en laboratorios educativos para demostrar cómo se genera y acumula la electricidad.
+    `;
+    botonAudio.addEventListener("click", () => {
+      const mensaje = new SpeechSynthesisUtterance(texto);
+      mensaje.lang = "es-ES";
+      mensaje.rate = 1;
+      speechSynthesis.cancel();
+      speechSynthesis.speak(mensaje);
+    });
+  </script>
+
+</body>
+</html>

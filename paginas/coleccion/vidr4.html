@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resistencias de Laboratorio - Museo Digital</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/x-icon" href="/images.ico">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="font-sans bg-gray-900 text-white">
+
+  <section class="relative h-screen flex items-center justify-start bg-cover bg-center" style="background-image: url('vid4.jpeg');">
+    <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-transparent"></div>
+
+    <div class="relative z-10 max-w-3xl px-10 md:px-20">
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-6">Resistencias de Laboratorio</h1>
+
+      <p class="text-lg mb-4 text-gray-200 leading-relaxed">
+        Las <strong>resistencias de laboratorio</strong> fueron utilizadas para estudiar los principios de la Ley de Ohm y
+        los comportamientos de los circuitos eléctricos. Estas resistencias ajustables permitían cambiar el valor de la carga,
+        observando así la relación entre corriente, voltaje y resistencia.
+      </p>
+
+      <p class="text-lg mb-4 text-gray-200 leading-relaxed">
+        A partir del siglo XX, estos equipos se emplearon en escuelas técnicas y universidades como una herramienta pedagógica,
+        permitiendo visualizar los efectos de los distintos materiales conductores.
+      </p>
+
+      <p class="text-lg text-gray-200 mb-10 leading-relaxed">
+        Aunque hoy se utilizan resistencias más compactas, estas piezas históricas representan el inicio de la educación práctica
+        en electricidad y electrónica.
+      </p>
+
+      <div class="flex gap-4">
+        <button id="audioBtn" class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-md font-semibold shadow-md transition">
+          🔊 Reproducir audio informativo
+        </button>
+        <a href="index.html" class="bg-white text-black font-semibold px-5 py-3 rounded-md shadow-md hover:bg-gray-200 transition">← Volver</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const texto = `
+      Las resistencias de laboratorio se usaron para estudiar la ley de Ohm y los circuitos eléctricos.
+      Permitían variar el valor de la resistencia para observar el efecto en la corriente y el voltaje.
+    `;
+    document.getElementById("audioBtn").addEventListener("click", () => {
+      const mensaje = new SpeechSynthesisUtterance(texto);
+      mensaje.lang = "es-ES";
+      speechSynthesis.cancel();
+      speechSynthesis.speak(mensaje);
+    });
+  </script>
+
+</body>
+</html>

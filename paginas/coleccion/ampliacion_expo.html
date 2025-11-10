@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todas las Exposiciones - Museo Digital</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/x-icon" href="/images.ico">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-white text-black font-sans">
+
+  <!-- NAVBAR -->
+  <div id="navbar-placeholder"></div>
+  <script>
+    fetch("/navbar.html")
+      .then(response => {
+              if (!response.ok) {
+                  throw new Error('Error al cargar navbar.html');
+              }
+              return response.text();
+          })
+          .then(data => {
+            // 1. Insertar el HTML de la barra de navegación
+            document.getElementById("navbar-placeholder").innerHTML = data;
+
+            // 2. UNA VEZ INSERTADO, AÑADIR LA FUNCIONALIDAD DEL MENÚ
+
+            const menuButton = document.getElementById('menu-button');
+            const closeMenu = document.getElementById('close-menu');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const overlay = document.getElementById('overlay');
+
+            if (menuButton && mobileMenu) {
+                // Función para ABRIR el menú
+                menuButton.addEventListener('click', () => {
+                    mobileMenu.classList.remove('translate-x-full');
+                    overlay.classList.remove('hidden');
+                });
+
+                // Función para CERRAR el menú
+                const closeMenuFunction = () => {
+                    mobileMenu.classList.add('translate-x-full');
+                    overlay.classList.add('hidden');
+                };
+
+                closeMenu.addEventListener('click', closeMenuFunction);
+                overlay.addEventListener('click', closeMenuFunction);
+                
+                // Opcional: Cerrar menú al hacer clic en un enlace
+                document.querySelectorAll('#mobile-menu a').forEach(link => {
+                    link.addEventListener('click', closeMenuFunction);
+                });
+
+            } else {
+                 console.error("Los elementos del menú no se encontraron en el HTML cargado.");
+            }
+          })
+          .catch(error => {
+              console.error("Hubo un error cargando la navbar:", error);
+              // NOTA: Si ves este error, asegúrate de que estás ejecutando el 
+              // archivo a través de un servidor local (ej: Live Server de VS Code). 
+              // El 'fetch' no suele funcionar en archivos locales (file://).
+          });
+  </script>
+
+  <!-- ENCABEZADO -->
+  <section class="text-center py-20 bg-gray-50 border-b border-gray-200">
+    <h2 class="text-5xl font-bold text-black mb-4">Todas las Exposiciones</h2>
+    <p class="max-w-3xl mx-auto text-gray-700 text-lg">
+      Descubrí las exposiciones que conservan la historia, la técnica y la evolución de la enseñanza industrial en nuestra institución.
+    </p>
+  </section>
+
+  <!-- EXPOSICIONES -->
+  <main class="max-w-7xl mx-auto px-6 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+      <!-- Exposición 1 -->
+      <section class="relative group rounded-xl overflow-hidden shadow-lg">
+        <img src="maquina1.jpeg" class="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-black/90 to-transparent text-white">
+          <h2 class="text-2xl font-bold mb-2">Banco de Trabajo y Compresor Antiguo</h2>
+          <p class="text-sm mb-4">Herramientas y equipos que fueron base del aprendizaje técnico en los primeros talleres de la escuela, utilizados para tareas de mantenimiento y prácticas mecánicas.</p>
+          <a href="maquina1.html" class="inline-block bg-white text-black px-5 py-2 rounded-md font-semibold hover:bg-gray-200 transition">Ver más</a>
+        </div>
+      </section>
+
+      <!-- Exposición 2 -->
+      <section class="relative group rounded-xl overflow-hidden shadow-lg">
+        <img src="maquina2.jpeg" class="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-black/90 to-transparent text-white">
+          <h2 class="text-2xl font-bold mb-2">Compresor Didáctico</h2>
+          <p class="text-sm mb-4">Equipo utilizado en las clases de neumática y automatización para demostrar el funcionamiento de sistemas de aire comprimido y control de válvulas.</p>
+          <a href="maquina2.html" class="inline-block bg-white text-black px-5 py-2 rounded-md font-semibold hover:bg-gray-200 transition">Ver más</a>
+        </div>
+      </section>
+
+      <!-- Exposición 3 -->
+      <section class="relative group rounded-xl overflow-hidden shadow-lg">
+        <img src="maquina3.jpeg" class="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-black/90 to-transparent text-white">
+          <h2 class="text-2xl font-bold mb-2">Compresor de Laboratorio</h2>
+          <p class="text-sm mb-4">Antiguo compresor restaurado, empleado por generaciones de alumnos para ensayos de presión, mantenimiento de sistemas y prácticas de refrigeración.</p>
+          <a href="maquina3.html" class="inline-block bg-white text-black px-5 py-2 rounded-md font-semibold hover:bg-gray-200 transition">Ver más</a>
+        </div>
+      </section>
+
+      <!-- Exposición 4 -->
+      <section class="relative group rounded-xl overflow-hidden shadow-lg">
+        <img src="maquina4.jpeg" class="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-black/90 to-transparent text-white">
+          <h2 class="text-2xl font-bold mb-2">Laminadora Mecánica</h2>
+          <p class="text-sm mb-4">Máquina de laminado utilizada en prácticas de taller para moldear metales. Su estructura y funcionamiento muestran la evolución del trabajo manual hacia la precisión técnica.</p>
+          <a href="maquina4.html" class="inline-block bg-white text-black px-5 py-2 rounded-md font-semibold hover:bg-gray-200 transition">Ver más</a>
+        </div>
+      </section>
+
+      <!-- Exposición 5 -->
+      <section class="relative group rounded-xl overflow-hidden shadow-lg">
+        <img src="maquina5.jpeg" class="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-black/90 to-transparent text-white">
+          <h2 class="text-2xl font-bold mb-2">Instrumentos del Pasado</h2>
+          <p class="text-sm mb-4">Equipos históricos empleados en la enseñanza técnica, como paneles de control, bobinas y generadores didácticos, que formaron parte del aprendizaje eléctrico.</p>
+          <a href="maquina5.html" class="inline-block bg-white text-black px-5 py-2 rounded-md font-semibold hover:bg-gray-200 transition">Ver más</a>
+        </div>
+      </section>
+
+      <!-- Exposición 6 -->
+      <section class="relative group rounded-xl overflow-hidden shadow-lg">
+        <img src="maquina6.jpeg" class="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-black/90 to-transparent text-white">
+          <h2 class="text-2xl font-bold mb-2">Energía y Transformación</h2>
+          <p class="text-sm mb-4">Muestra dedicada a los dispositivos que representan la conversión y transmisión de energía: transformadores, motores y generadores eléctricos educativos.</p>
+          <a href="maquina6.html" class="inline-block bg-white text-black px-5 py-2 rounded-md font-semibold hover:bg-gray-200 transition">Ver más</a>
+        </div>
+      </section>
+
+      <!-- Exposición 7 -->
+<section class="relative group rounded-xl overflow-hidden shadow-lg md:col-span-2">
+  <img src="maquina7.jpeg" class="w-full h-[450px] object-cover group-hover:scale-105 transition-transform duration-500">
+  <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/90 to-transparent text-white">
+    <h2 class="text-2xl font-bold mb-2">Legado de la Técnica</h2>
+    <p class="text-sm mb-4">Un cierre simbólico que combina herramientas, maquinarias y figuras históricas que representan la herencia educativa y técnica de nuestra institución.</p>
+    <a href="maquina7.html" class="inline-block bg-white text-black px-5 py-2 rounded-md font-semibold hover:bg-gray-200 transition">Ver más</a>
+  </div>
+</section>
+
+
+    </div>
+  </main>
+
+  <div id="footer"></div>
+
+  <script>
+    fetch("/footer.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("footer").innerHTML = data;
+      });
+  </script>
+  
+
+  
+</body>
+</html>

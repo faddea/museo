@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teclado IBM 5260 - Museo Digital</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/x-icon" href="/images.ico">
+    <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .fade-in {
+      animation: fadeIn 1.2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(1.02); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body class="bg-black text-white font-sans">
+
+  <!-- Imagen de fondo con información -->
+  <section class="relative fade-in h-screen flex items-end justify-start">
+    <img src="inf4.jpeg" alt="Teclado IBM 5260" class="absolute inset-0 w-full h-full object-cover opacity-90">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
+
+    <div class="relative z-10 p-10 max-w-3xl">
+      <h1 class="text-4xl font-bold mb-4">Teclado IBM 5260</h1>
+      <p class="text-gray-200 mb-5 text-lg leading-relaxed">
+        El <strong>Teclado IBM 5260</strong> representa uno de los primeros modelos industriales de IBM diseñados para sistemas de cómputo profesional. 
+        Su estructura robusta y teclas mecánicas lo convirtieron en un referente de durabilidad y precisión en los años 80.
+      </p>
+      <p class="text-gray-300 mb-6 text-base">
+        Este teclado era parte integral de las estaciones de trabajo IBM System/36 y System/38, 
+        equipos que marcaron una época en la computación empresarial. 
+        Sus interruptores mecánicos proporcionaban una respuesta táctil y auditiva única, 
+        valorada tanto por programadores como por operadores técnicos.
+      </p>
+      <p class="text-gray-400 mb-8 text-base">
+        Con el tiempo, su diseño inspiró a los teclados modernos, manteniendo el mismo formato clásico de 101 teclas 
+        que aún se utiliza en computadoras actuales. En los entornos educativos y técnicos, fue una herramienta esencial 
+        para enseñar mecanografía y prácticas de hardware informático.
+      </p>
+
+      <!-- Botones -->
+      <div class="flex items-center gap-4">
+        <button id="audioBtn" class="bg-blue-600 text-white px-5 py-3 rounded-full font-semibold shadow-lg hover:bg-blue-700 transition transform hover:scale-105">
+          🔊 Reproducir audio informativo
+        </button>
+        <a href="expo_informatica.html" class="bg-white text-black px-5 py-3 rounded-md font-semibold hover:bg-gray-200 transition">
+          ← Volver
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Script de audio -->
+  <script>
+    const botonAudio = document.getElementById("audioBtn");
+    const texto = `
+      El teclado IBM 5260 fue uno de los primeros modelos mecánicos utilizados en sistemas de cómputo profesional. 
+      Fabricado en la década de los ochenta, ofrecía una gran precisión y durabilidad. 
+      Su diseño fue la base de los teclados modernos que aún usamos hoy en día.
+    `;
+    botonAudio.addEventListener("click", () => {
+      const mensaje = new SpeechSynthesisUtterance(texto);
+      mensaje.lang = "es-ES";
+      mensaje.rate = 1;
+      speechSynthesis.cancel();
+      speechSynthesis.speak(mensaje);
+    });
+  </script>
+
+</body>
+</html>

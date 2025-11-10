@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Placa Base y Microchips - Museo Digital</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/x-icon" href="/images.ico">
+    <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .fade-in {
+      animation: fadeIn 1.2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(1.02); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body class="bg-black text-white font-sans">
+
+  <!-- Imagen principal con fondo oscuro -->
+  <section class="relative fade-in h-screen flex items-end justify-start">
+    <img src="inf1.jpeg" alt="Placa Base y Microchips" class="absolute inset-0 w-full h-full object-cover opacity-90">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
+
+    <div class="relative z-10 p-10 max-w-3xl">
+      <h1 class="text-4xl font-bold mb-4">Placa Base / Tarjeta Madre y Microchips</h1>
+      <p class="text-gray-200 mb-5 text-lg leading-relaxed">
+        La <strong>placa base</strong> o tarjeta madre es el corazón de cualquier computadora. 
+        Fue desarrollada a mediados del siglo XX para integrar en un solo circuito los principales componentes del sistema: 
+        procesador, memoria, almacenamiento y conexiones periféricas.
+      </p>
+      <p class="text-gray-300 mb-6 text-base">
+        Los <strong>microchips</strong> —o circuitos integrados— revolucionaron la informática en los años 70 y 80, 
+        permitiendo que los sistemas fueran más pequeños, rápidos y eficientes. 
+        Cada chip contenía miles de transistores que ejecutaban operaciones complejas, marcando el paso de las computadoras industriales a las personales.
+      </p>
+      <p class="text-gray-400 mb-8 text-base">
+        En el ámbito educativo, las placas base fueron una herramienta fundamental para enseñar electrónica digital y arquitectura de computadoras, 
+        sentando las bases del conocimiento técnico en generaciones de estudiantes.
+      </p>
+
+      <!-- Botones -->
+      <div class="flex items-center gap-4">
+        <button id="audioBtn" class="bg-blue-600 text-white px-5 py-3 rounded-full font-semibold shadow-lg hover:bg-blue-700 transition transform hover:scale-105">
+          🔊 Reproducir audio informativo
+        </button>
+        <a href="expo_informatica.html" class="bg-white text-black px-5 py-3 rounded-md font-semibold hover:bg-gray-200 transition">
+          ← Volver
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Script de audio -->
+  <script>
+    const botonAudio = document.getElementById("audioBtn");
+    const texto = `
+      La placa base, también conocida como tarjeta madre, surgió en los años cincuenta 
+      como el eje central que conecta todos los componentes de una computadora. 
+      Junto a los microchips, permitió reducir el tamaño y aumentar la velocidad de los equipos. 
+      Esta tecnología marcó una nueva era en la enseñanza de la informática y la electrónica técnica.
+    `;
+    botonAudio.addEventListener("click", () => {
+      const mensaje = new SpeechSynthesisUtterance(texto);
+      mensaje.lang = "es-ES";
+      mensaje.rate = 1;
+      speechSynthesis.cancel();
+      speechSynthesis.speak(mensaje);
+    });
+  </script>
+
+</body>
+</html>

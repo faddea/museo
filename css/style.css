@@ -1,0 +1,67 @@
+.carousel-item {
+            scroll-snap-align: center;
+            flex-shrink: 0;
+            width: 100%;
+        }
+        
+        .carousel-container::-webkit-scrollbar {
+            display: none;
+        }
+        /* Ancho de la barra */
+        
+         ::-webkit-scrollbar {
+            width: 14px;
+        }
+        /* Fondo de la barra */
+        
+         ::-webkit-scrollbar-track {
+            background: #5f5f5f;
+        }
+        /* "Pulgarcito" (la parte que se mueve) */
+        
+         ::-webkit-scrollbar-thumb {
+            background: #1f1f1f;
+            border-radius: none;
+        }
+        /* Hover en el pulgarcito */
+        
+         ::-webkit-scrollbar-thumb:hover {
+            background: #0c0c0c;
+            border-radius: 10px;
+        }
+        
+        .carousel-item {
+            scroll-snap-align: center;
+            flex-shrink: 0;
+            width: 100%;
+        }
+        
+        .carousel-container::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .split-letter {
+            display: inline-block;
+            will-change: transform, opacity;
+            transform-origin: center center;
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        .space {
+            width: 0.45rem;
+            display: inline-block;
+        }
+
+
+        @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+
+/* Todo el sitio */
+body {
+  font-family: 'Lora', serif;
+}
+
+/* O solo títulos si quieres */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lora', serif;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todas las Exposiciones - Museo Digital</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/x-icon" href="/images.ico">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-white text-black font-sans">
+
+  <!-- NAVBAR -->
+  <div id="navbar-placeholder"></div>
+  <script>
+    fetch("/navbar.html")
+      .then(response => {
+        if (!response.ok) throw new Error('Error al cargar navbar.html');
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById("navbar-placeholder").innerHTML = data;
+
+        const menuButton = document.getElementById('menu-button');
+        const closeMenu = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const overlay = document.getElementById('overlay');
+
+        if (menuButton && mobileMenu) {
+          const closeMenuFunction = () => {
+            mobileMenu.classList.add('translate-x-full');
+            overlay.classList.add('hidden');
+          };
+
+          menuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+            overlay.classList.remove('hidden');
+          });
+
+          closeMenu.addEventListener('click', closeMenuFunction);
+          overlay.addEventListener('click', closeMenuFunction);
+
+          document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', closeMenuFunction);
+          });
+        }
+      })
+      .catch(error => console.error("Hubo un error cargando la navbar:", error));
+  </script>
+
+  <!-- Encabezado -->
+  <section class="text-center py-14 bg-gray-50 border-b border-gray-200">
+    <h1 class="text-4xl font-bold text-black mb-3">Todas las Exposiciones</h1>
+    <p class="max-w-2xl mx-auto text-gray-600 text-lg">
+      Explora las exposiciones del Museo Digital que preservan la historia técnica y educativa de nuestra institución.
+    </p>
+  </section>
+
+  <!-- Contenedor principal -->
+  <main class="max-w-5xl mx-auto px-4 py-12 space-y-10">
+
+    <!-- EXPO 1 -->
+    <section class="relative rounded-xl overflow-hidden shadow-lg">
+      <img src="mvid1.jpg" alt="Fuelle de Fragua" class="w-full h-[350px] object-cover">
+      <div class="absolute inset-0 flex items-end">
+        <div class="w-full bg-gradient-to-t from-black/80 to-transparent p-5 text-white">
+          <h2 class="text-lg font-semibold">Fuelle de Fragua</h2>
+          <p class="text-xs text-gray-200 mb-3">
+            Un instrumento tradicional que se utiliza para inyectar aire a presión y avivar el fuego en fraguas y hornos de herrería.
+          </p>
+          <a href="informacionexpo3.html" class="text-xs bg-white text-black px-3 py-1 rounded-md font-medium hover:bg-gray-200 transition">
+            Ver más
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPO 2 -->
+    <section class="relative rounded-xl overflow-hidden shadow-lg">
+      <img src="mvid2.jpg" alt="Máquina de Wimshurst" class="w-full h-[350px] object-cover">
+      <div class="absolute inset-0 flex items-end">
+        <div class="w-full bg-gradient-to-t from-black/80 to-transparent p-5 text-white">
+          <h2 class="text-lg font-semibold">Máquina de Wimshurst</h2>
+          <p class="text-xs text-gray-200 mb-3">
+            Es un generador electrostático de influencia que produce altas tensiones de electricidad estática. Se utilizaba para experimentos científicos y demostraciones educativas.
+          </p>
+          <a href="informacionexpo2.html" class="text-xs bg-white text-black px-3 py-1 rounded-md font-medium hover:bg-gray-200 transition">
+            Ver más
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPO 3 -->
+    <section class="relative rounded-xl overflow-hidden shadow-lg">
+      <img src="mvid3.jpg" alt="Proyector de Diapositivas" class="w-full h-[350px] object-cover">
+      <div class="absolute inset-0 flex items-end">
+        <div class="w-full bg-gradient-to-t from-black/80 to-transparent p-5 text-white">
+          <h2 class="text-lg font-semibold">Proyector de Diapositivas</h2>
+          <p class="text-xs text-gray-200 mb-3">
+            Dispositivo audiovisual utilizado antiguamente para proyectar materiales educativos.
+          </p>
+          <a href="informacionexpo1.html" class="text-xs bg-white text-black px-3 py-1 rounded-md font-medium hover:bg-gray-200 transition">
+            Ver más
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>
