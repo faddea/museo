@@ -5,66 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Generador de Van de Graaff - Museo Digital</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="icon" type="image/x-icon" href="/images.ico">
-    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="font-sans bg-gray-900 text-white">
 
-  <!-- Sección principal -->
-  <section class="relative h-screen flex items-center justify-start bg-cover bg-center" style="background-image: url('vid1.jpg');">
-    <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-transparent"></div>
+<section class="relative h-screen flex items-center justify-start bg-cover bg-center" style="background-image: url('vid1.jpg');">
+  <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-transparent"></div>
 
-    <div class="relative z-10 max-w-3xl px-10 md:px-20">
-      <h1 class="text-4xl md:text-5xl font-extrabold mb-6">
-        Generador de Van de Graaff
-      </h1>
+  <div class="relative z-10 max-w-3xl px-10 md:px-20">
+    <h1 class="text-4xl md:text-5xl font-extrabold mb-6">Generador de Van de Graaff</h1>
+    <p id="texto" class="text-lg text-gray-200 leading-relaxed mb-10">
+      Inventado en 1929 por Robert J. Van de Graaff, este generador electrostático puede producir millones de voltios. 
+      Utilizado en la enseñanza para mostrar fenómenos de electricidad estática, sigue siendo un recurso educativo clave.
+    </p>
 
-      <p class="text-lg mb-4 text-gray-200 leading-relaxed">
-        El <strong>Generador de Van de Graaff</strong> fue inventado por el físico <strong>Robert J. Van de Graaff</strong> en 1929.
-        Este generador electrostático fue diseñado para producir grandes diferencias de potencial eléctrico, alcanzando
-        hasta millones de voltios, y se utilizó en investigaciones sobre la electricidad estática y la física nuclear.
-      </p>
+     <<!-- 🔘 BOTONES -->
+<div class="flex flex-wrap gap-4">
+  <button id="audioBtn" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-md font-semibold shadow-md">
+    🔊 Reproducir audio
+  </button>
 
-      <p class="text-lg mb-4 text-gray-200 leading-relaxed">
-        Su funcionamiento se basa en una cinta transportadora que acumula cargas eléctricas en una esfera metálica.
-        Gracias a su simplicidad y eficacia, se convirtió en una herramienta educativa muy usada para demostrar fenómenos
-        eléctricos como la atracción, repulsión y descargas eléctricas.
-      </p>
+  <a href="ampliacion_expo2.html" class="bg-white text-black font-semibold px-5 py-3 rounded-md hover:bg-gray-200">
+    ← Volver a Todas las Exposiciones
+  </a>
+</div>
 
-      <p class="text-lg text-gray-200 mb-10 leading-relaxed">
-        En la actualidad, el generador de Van de Graaff sigue siendo un recurso didáctico fundamental en laboratorios
-        de física, permitiendo observar de manera visual los principios de la electrostática y la transferencia de energía.
-      </p>
-
-      <!-- Botones -->
-      <div class="flex flex-wrap gap-4">
-        <button id="audioBtn" class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-md font-semibold shadow-md transition">
-          🔊 Reproducir audio informativo
-        </button>
-
-        <a href="index.html" class="bg-white text-black font-semibold px-5 py-3 rounded-md shadow-md hover:bg-gray-200 transition">
-          ← Volver
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Script de voz -->
-  <script>
-    const texto = `
-      El generador de Van de Graaff fue inventado en mil novecientos veintinueve por Robert Van de Graaff.
-      Es un generador electrostático capaz de producir grandes diferencias de potencial eléctrico.
-      Se utiliza para mostrar fenómenos de electricidad estática, como la atracción y la repulsión de cargas,
-      y sigue siendo una herramienta educativa muy usada en los laboratorios de física.
-    `;
-    document.getElementById("audioBtn").addEventListener("click", () => {
-      const mensaje = new SpeechSynthesisUtterance(texto);
-      mensaje.lang = "es-ES";
-      mensaje.rate = 1;
-      speechSynthesis.cancel();
-      speechSynthesis.speak(mensaje);
-    });
-  </script>
+<!-- 🔊 SCRIPT DE AUDIO -->
+<script>
+document.getElementById("audioBtn").addEventListener("click", () => {
+  const texto = document.getElementById("texto").innerText;
+  const msg = new SpeechSynthesisUtterance(texto);
+  msg.lang = "es-ES";
+  msg.rate = 1;
+  speechSynthesis.cancel();
+  speechSynthesis.speak(msg);
+});
+</script>
 
 </body>
 </html>

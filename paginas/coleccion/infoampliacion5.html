@@ -40,34 +40,28 @@
         electrónica aplicada y arquitectura de sistemas. Representan una época donde la informática comenzaba a consolidarse como una ciencia práctica y tangible.
       </p>
 
-      <!-- Botones -->
-      <div class="flex items-center gap-4">
-        <button id="audioBtn" class="bg-blue-600 text-white px-5 py-3 rounded-full font-semibold shadow-lg hover:bg-blue-700 transition transform hover:scale-105">
-          🔊 Reproducir audio informativo
-        </button>
-        <a href="expo_informatica.html" class="bg-white text-black px-5 py-3 rounded-md font-semibold hover:bg-gray-200 transition">
-          ← Volver
-        </a>
-      </div>
-    </div>
-  </section>
+       <<!-- 🔘 BOTONES -->
+<div class="flex flex-wrap gap-4">
+  <button id="audioBtn" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-md font-semibold shadow-md">
+    🔊 Reproducir audio
+  </button>
 
-  <!-- Script de audio -->
-  <script>
-    const botonAudio = document.getElementById("audioBtn");
-    const texto = `
-      La unidad de disco BASF fue una de las primeras máquinas de almacenamiento magnético utilizadas en grandes computadoras. 
-      Su capacidad para guardar información en discos giratorios marcó el inicio de los sistemas de almacenamiento modernos. 
-      Estas unidades eran robustas, precisas y fundamentales en la evolución tecnológica de la informática.
-    `;
-    botonAudio.addEventListener("click", () => {
-      const mensaje = new SpeechSynthesisUtterance(texto);
-      mensaje.lang = "es-ES";
-      mensaje.rate = 1;
-      speechSynthesis.cancel();
-      speechSynthesis.speak(mensaje);
-    });
-  </script>
+  <a href="ampliacion_expo3.html" class="bg-white text-black font-semibold px-5 py-3 rounded-md hover:bg-gray-200">
+    ← Volver a Todas las Exposiciones
+  </a>
+</div>
+
+<!-- 🔊 SCRIPT DE AUDIO -->
+<script>
+document.getElementById("audioBtn").addEventListener("click", () => {
+  const texto = document.getElementById("texto").innerText;
+  const msg = new SpeechSynthesisUtterance(texto);
+  msg.lang = "es-ES";
+  msg.rate = 1;
+  speechSynthesis.cancel();
+  speechSynthesis.speak(msg);
+});
+</script>
 
 </body>
 </html>

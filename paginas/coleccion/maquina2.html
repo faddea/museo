@@ -6,7 +6,7 @@
   <title>Compresor Industrial Eléctrico - Museo Digital</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="icon" type="image/x-icon" href="/images.ico">
-    <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="m-0 p-0 font-sans">
 
@@ -17,20 +17,15 @@
     <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-16 flex flex-col justify-center h-full text-white">
       <h1 class="text-5xl font-extrabold mb-6 drop-shadow-lg">Compresor Industrial Eléctrico</h1>
 
-      <p class="text-lg leading-relaxed mb-5">
-        Este compresor de aire industrial, accionado por un motor eléctrico, fue utilizado en los talleres para suministrar energía a herramientas neumáticas y realizar prácticas de mantenimiento. Su diseño robusto lo convirtió en un elemento esencial de la formación técnica moderna.
-      </p>
-
-      <p class="text-lg leading-relaxed mb-5">
-        A través del estudio de compresores, los alumnos aprendían principios de presión, caudal y seguridad en sistemas de aire. También permitía conectar herramientas como pistolas de pintura o llaves de impacto, reforzando la aplicación práctica del aprendizaje.
-      </p>
-
-      <p class="text-lg leading-relaxed mb-8">
-        Este equipo marcó la transición de la mecánica manual a la automatización impulsada por energía neumática.
+      <p id="texto-info" class="text-lg leading-relaxed mb-8">
+        El compresor industrial eléctrico fue una herramienta clave en los talleres de electromecánica. 
+        Utilizado para generar aire comprimido, permitió el funcionamiento de equipos neumáticos y la enseñanza de sistemas de presión. 
+        A través de su estudio, los alumnos comprendieron los fundamentos del mantenimiento, seguridad y eficiencia energética. 
+        Este compresor simboliza la evolución tecnológica aplicada al aprendizaje técnico.
       </p>
 
       <div class="flex flex-wrap gap-4">
-        <button onclick="reproducirAudio()" class="flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition">
+        <button onclick="leerTexto()" class="flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition">
           🔊 Reproducir audio informativo
         </button>
         <a href="ampliacion_expo.html" class="bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition shadow-md">
@@ -40,14 +35,16 @@
     </div>
   </section>
 
-  <audio id="audioInfo">
-    <source src="audio_maquina2.mp3" type="audio/mpeg">
-    Tu navegador no soporta la reproducción de audio.
-  </audio>
-
   <script>
-    function reproducirAudio() {
-      document.getElementById('audioInfo').play();
+    function leerTexto() {
+      const texto = document.getElementById('texto-info').innerText;
+      const utterance = new SpeechSynthesisUtterance(texto);
+      utterance.lang = 'es-ES';
+      utterance.rate = 1;
+      utterance.pitch = 1;
+      utterance.volume = 1;
+      speechSynthesis.cancel();
+      speechSynthesis.speak(utterance);
     }
   </script>
 </body>

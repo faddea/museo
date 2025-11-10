@@ -6,7 +6,7 @@
   <title>Instrumentos del Pasado - Museo Digital</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="icon" type="image/x-icon" href="/images.ico">
-    <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="m-0 p-0 font-sans">
 
@@ -17,20 +17,15 @@
     <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-16 flex flex-col justify-center h-full text-white">
       <h1 class="text-5xl font-extrabold mb-6 drop-shadow-lg">Instrumentos del Pasado</h1>
 
-      <p class="text-lg leading-relaxed mb-5">
-        Esta sección conserva equipos históricos empleados en la enseñanza técnica de generaciones anteriores. Las máquinas de bobinas, interruptores y palancas eran utilizadas para demostrar principios básicos de electricidad y magnetismo.
-      </p>
-
-      <p class="text-lg leading-relaxed mb-5">
-        En los talleres de electricidad, los alumnos aprendían a conectar circuitos, medir tensiones y experimentar con transformadores. Cada componente expuesto simboliza el ingenio y la curiosidad que impulsaron la ciencia práctica.
-      </p>
-
-      <p class="text-lg leading-relaxed mb-8">
-        Estos dispositivos representan el inicio de la formación tecnológica en la escuela, cuando la experimentación manual era la base del aprendizaje.
+      <p id="texto-info" class="text-lg leading-relaxed mb-8">
+        Esta sección conserva equipos históricos empleados en la enseñanza técnica de generaciones anteriores. 
+        Las máquinas de bobinas, interruptores y palancas eran utilizadas para demostrar principios básicos de electricidad y magnetismo. 
+        En los talleres de electricidad, los alumnos aprendían a conectar circuitos, medir tensiones y experimentar con transformadores. 
+        Estos dispositivos representan el inicio de la formación tecnológica, cuando la experimentación manual era la base del aprendizaje.
       </p>
 
       <div class="flex flex-wrap gap-4">
-        <button onclick="reproducirAudio()" class="flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition">
+        <button onclick="leerTexto()" class="flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition">
           🔊 Reproducir audio informativo
         </button>
         <a href="ampliacion_expo.html" class="bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition shadow-md">
@@ -40,14 +35,16 @@
     </div>
   </section>
 
-  <audio id="audioInfo">
-    <source src="audio_maquina5.mp3" type="audio/mpeg">
-    Tu navegador no soporta la reproducción de audio.
-  </audio>
-
   <script>
-    function reproducirAudio() {
-      document.getElementById('audioInfo').play();
+    function leerTexto() {
+      const texto = document.getElementById('texto-info').innerText;
+      const utterance = new SpeechSynthesisUtterance(texto);
+      utterance.lang = 'es-ES';
+      utterance.rate = 1;
+      utterance.pitch = 1;
+      utterance.volume = 1;
+      speechSynthesis.cancel();
+      speechSynthesis.speak(utterance);
     }
   </script>
 </body>

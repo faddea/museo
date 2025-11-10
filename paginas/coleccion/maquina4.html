@@ -6,7 +6,7 @@
   <title>Laminadora y Torno de Precisión - Museo Digital</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="icon" type="image/x-icon" href="/images.ico">
-    <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="m-0 p-0 font-sans">
 
@@ -17,20 +17,15 @@
     <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-16 flex flex-col justify-center h-full text-white">
       <h1 class="text-5xl font-extrabold mb-6 drop-shadow-lg">Laminadora y Torno de Precisión</h1>
 
-      <p class="text-lg leading-relaxed mb-5">
-        Esta máquina laminadora de rodillos se utilizaba para dar forma a chapas y piezas metálicas mediante presión controlada. A su lado, el torno de precisión permitía realizar cortes exactos y acabados finos, fundamentales en la metalurgia técnica.
-      </p>
-
-      <p class="text-lg leading-relaxed mb-5">
-        Con estos equipos, los estudiantes aprendían sobre la transformación del metal, el uso de herramientas de corte y la calibración de tolerancias, habilidades esenciales para el trabajo industrial.
-      </p>
-
-      <p class="text-lg leading-relaxed mb-8">
-        Estas máquinas simbolizan la evolución de los talleres hacia la fabricación avanzada y la robótica aplicada, donde la precisión y la automatización son protagonistas.
+      <p id="texto-info" class="text-lg leading-relaxed mb-8">
+        Esta máquina laminadora de rodillos se utilizaba para dar forma a chapas y piezas metálicas mediante presión controlada. 
+        A su lado, el torno de precisión permitía realizar cortes exactos y acabados finos, fundamentales en la metalurgia técnica. 
+        Con estos equipos, los estudiantes aprendían sobre la transformación del metal, el uso de herramientas de corte y la calibración de tolerancias. 
+        Estas máquinas simbolizan la evolución de los talleres hacia la fabricación avanzada y la robótica aplicada.
       </p>
 
       <div class="flex flex-wrap gap-4">
-        <button onclick="reproducirAudio()" class="flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition">
+        <button onclick="leerTexto()" class="flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition">
           🔊 Reproducir audio informativo
         </button>
         <a href="ampliacion_expo.html" class="bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition shadow-md">
@@ -40,14 +35,16 @@
     </div>
   </section>
 
-  <audio id="audioInfo">
-    <source src="audio_maquina4.mp3" type="audio/mpeg">
-    Tu navegador no soporta la reproducción de audio.
-  </audio>
-
   <script>
-    function reproducirAudio() {
-      document.getElementById('audioInfo').play();
+    function leerTexto() {
+      const texto = document.getElementById('texto-info').innerText;
+      const utterance = new SpeechSynthesisUtterance(texto);
+      utterance.lang = 'es-ES';
+      utterance.rate = 1;
+      utterance.pitch = 1;
+      utterance.volume = 1;
+      speechSynthesis.cancel();
+      speechSynthesis.speak(utterance);
     }
   </script>
 </body>

@@ -6,7 +6,7 @@
   <title>Energía y Transformación - Museo Digital</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="icon" type="image/x-icon" href="/images.ico">
-    <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="m-0 p-0 font-sans">
 
@@ -17,20 +17,15 @@
     <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-16 flex flex-col justify-center h-full text-white">
       <h1 class="text-5xl font-extrabold mb-6 drop-shadow-lg">Energía y Transformación</h1>
 
-      <p class="text-lg leading-relaxed mb-5">
-        Aquí se exponen generadores, transformadores y dispositivos de medición que ilustran la conversión de energía eléctrica. Estos equipos eran parte del laboratorio donde los estudiantes aprendían a identificar voltajes, resistencias y corrientes.
-      </p>
-
-      <p class="text-lg leading-relaxed mb-5">
-        Las prácticas con fuentes de energía ayudaban a comprender fenómenos como la inducción electromagnética y el funcionamiento de los motores eléctricos. Este conocimiento fue clave para la evolución industrial y educativa.
-      </p>
-
-      <p class="text-lg leading-relaxed mb-8">
-        La exposición también rinde homenaje a los docentes que impulsaron la enseñanza técnica, promoviendo el pensamiento crítico y la experimentación.
+      <p id="texto-info" class="text-lg leading-relaxed mb-8">
+        Esta máquina transformadora de energía representa la transición de la mecánica tradicional hacia la energía eléctrica aplicada. 
+        Era utilizada para enseñar los principios de conversión electromecánica, permitiendo que los estudiantes comprendieran cómo se produce, 
+        transmite y almacena la energía en sistemas industriales. 
+        A través de su uso, se fomentó la comprensión del equilibrio entre eficiencia energética y sostenibilidad en el ámbito técnico.
       </p>
 
       <div class="flex flex-wrap gap-4">
-        <button onclick="reproducirAudio()" class="flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition">
+        <button onclick="leerTexto()" class="flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition">
           🔊 Reproducir audio informativo
         </button>
         <a href="ampliacion_expo.html" class="bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition shadow-md">
@@ -40,14 +35,16 @@
     </div>
   </section>
 
-  <audio id="audioInfo">
-    <source src="audio_maquina6.mp3" type="audio/mpeg">
-    Tu navegador no soporta la reproducción de audio.
-  </audio>
-
   <script>
-    function reproducirAudio() {
-      document.getElementById('audioInfo').play();
+    function leerTexto() {
+      const texto = document.getElementById('texto-info').innerText;
+      const utterance = new SpeechSynthesisUtterance(texto);
+      utterance.lang = 'es-ES';
+      utterance.rate = 1;
+      utterance.pitch = 1;
+      utterance.volume = 1;
+      speechSynthesis.cancel();
+      speechSynthesis.speak(utterance);
     }
   </script>
 </body>

@@ -5,53 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Medidores Analógicos - Museo Digital</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="icon" type="image/x-icon" href="/images.ico">
-    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="font-sans bg-gray-900 text-white">
 
-  <section class="relative h-screen flex items-center justify-start bg-cover bg-center" style="background-image: url('vid3.jpg');">
-    <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-transparent"></div>
+<section class="relative h-screen flex items-center justify-start bg-cover bg-center" style="background-image: url('vid3.jpg');">
+  <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-transparent"></div>
 
-    <div class="relative z-10 max-w-3xl px-10 md:px-20">
-      <h1 class="text-4xl md:text-5xl font-extrabold mb-6">Medidores Analógicos</h1>
+  <div class="relative z-10 max-w-3xl px-10 md:px-20">
+    <h1 class="text-4xl md:text-5xl font-extrabold mb-6">Medidores Analógicos</h1>
+    <p id="texto" class="text-lg text-gray-200 leading-relaxed mb-10">
+      Los medidores analógicos fueron instrumentos esenciales en la medición eléctrica. 
+      Permitían observar voltaje, corriente y resistencia con una aguja móvil sobre una escala graduada, 
+      y sentaron las bases de la instrumentación moderna.
+    </p>
 
-      <p class="text-lg mb-4 text-gray-200 leading-relaxed">
-        Los <strong>medidores analógicos</strong>, como voltímetros y amperímetros, fueron herramientas esenciales en la medición eléctrica
-        durante gran parte del siglo XX. Funcionaban con agujas que indicaban valores de corriente, voltaje o resistencia en una escala graduada.
-      </p>
+     <<!-- 🔘 BOTONES -->
+<div class="flex flex-wrap gap-4">
+  <button id="audioBtn" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-md font-semibold shadow-md">
+    🔊 Reproducir audio
+  </button>
 
-      <p class="text-lg mb-4 text-gray-200 leading-relaxed">
-        Su desarrollo permitió a técnicos y estudiantes analizar el comportamiento de los circuitos eléctricos con gran precisión.
-        Antes de la llegada de los multímetros digitales, estos instrumentos eran la base de toda práctica de laboratorio eléctrico.
-      </p>
+  <a href="ampliacion_expo2.html" class="bg-white text-black font-semibold px-5 py-3 rounded-md hover:bg-gray-200">
+    ← Volver a Todas las Exposiciones
+  </a>
+</div>
 
-      <p class="text-lg text-gray-200 mb-10 leading-relaxed">
-        Aunque hoy en día han sido reemplazados por sistemas digitales, los medidores analógicos siguen siendo una referencia importante
-        para comprender el funcionamiento clásico de la instrumentación eléctrica.
-      </p>
-
-      <div class="flex gap-4">
-        <button id="audioBtn" class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-md font-semibold shadow-md transition">
-          🔊 Reproducir audio informativo
-        </button>
-        <a href="index.html" class="bg-white text-black font-semibold px-5 py-3 rounded-md shadow-md hover:bg-gray-200 transition">← Volver</a>
-      </div>
-    </div>
-  </section>
-
-  <script>
-    const texto = `
-      Los medidores analógicos fueron herramientas esenciales para medir voltaje, corriente y resistencia.
-      Funcionaban con una aguja móvil sobre una escala graduada y fueron ampliamente utilizados antes de la llegada de los sistemas digitales.
-    `;
-    document.getElementById("audioBtn").addEventListener("click", () => {
-      const mensaje = new SpeechSynthesisUtterance(texto);
-      mensaje.lang = "es-ES";
-      speechSynthesis.cancel();
-      speechSynthesis.speak(mensaje);
-    });
-  </script>
+<!-- 🔊 SCRIPT DE AUDIO -->
+<script>
+document.getElementById("audioBtn").addEventListener("click", () => {
+  const texto = document.getElementById("texto").innerText;
+  const msg = new SpeechSynthesisUtterance(texto);
+  msg.lang = "es-ES";
+  msg.rate = 1;
+  speechSynthesis.cancel();
+  speechSynthesis.speak(msg);
+});
+</script>
 
 </body>
 </html>

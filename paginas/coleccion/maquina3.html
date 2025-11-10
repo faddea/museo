@@ -3,34 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sistema de Aire Comprimido - Museo Digital</title>
+  <title>Máquina Fresadora de Precisión - Museo Digital</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="icon" type="image/x-icon" href="/images.ico">
-    <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="m-0 p-0 font-sans">
 
   <section class="relative w-full h-screen overflow-hidden">
-    <img src="maquina3.jpeg" alt="Sistema de Presión y Aire Comprimido" class="absolute inset-0 w-full h-full object-cover brightness-75">
+    <img src="maquina3.jpeg" alt="Fresadora de Precisión" class="absolute inset-0 w-full h-full object-cover brightness-75">
     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
 
     <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-16 flex flex-col justify-center h-full text-white">
-      <h1 class="text-5xl font-extrabold mb-6 drop-shadow-lg">Sistema de Aire Comprimido</h1>
+      <h1 class="text-5xl font-extrabold mb-6 drop-shadow-lg">Máquina Fresadora de Precisión</h1>
 
-      <p class="text-lg leading-relaxed mb-5">
-        Este sistema de aire comprimido se empleaba para estudiar los principios de la neumática aplicada. A través de él, los estudiantes podían analizar el comportamiento del aire bajo presión y su uso en la automatización de procesos.
-      </p>
-
-      <p class="text-lg leading-relaxed mb-5">
-        El equipo formaba parte de las prácticas de laboratorio, donde se comprobaba el funcionamiento de válvulas, pistones y sistemas de control de flujo. Su estructura metálica y motor externo simbolizan la transición hacia la enseñanza técnico-científica moderna.
-      </p>
-
-      <p class="text-lg leading-relaxed mb-8">
-        Estas máquinas representan la base de la ingeniería aplicada y el mantenimiento industrial en los talleres educativos.
+      <p id="texto-info" class="text-lg leading-relaxed mb-8">
+        La fresadora de precisión fue una de las máquinas más emblemáticas en el aprendizaje técnico. 
+        Permitía moldear y cortar metales con extrema exactitud, desarrollando las destrezas de diseño, calibración y cálculo de medidas. 
+        Su implementación marcó un salto en la enseñanza de manufactura, destacando la importancia del control dimensional y la productividad industrial. 
+        Hoy, sigue siendo un referente en la evolución tecnológica de la escuela.
       </p>
 
       <div class="flex flex-wrap gap-4">
-        <button onclick="reproducirAudio()" class="flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition">
+        <button onclick="leerTexto()" class="flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition">
           🔊 Reproducir audio informativo
         </button>
         <a href="ampliacion_expo.html" class="bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition shadow-md">
@@ -40,14 +35,16 @@
     </div>
   </section>
 
-  <audio id="audioInfo">
-    <source src="audio_maquina3.mp3" type="audio/mpeg">
-    Tu navegador no soporta la reproducción de audio.
-  </audio>
-
   <script>
-    function reproducirAudio() {
-      document.getElementById('audioInfo').play();
+    function leerTexto() {
+      const texto = document.getElementById('texto-info').innerText;
+      const utterance = new SpeechSynthesisUtterance(texto);
+      utterance.lang = 'es-ES';
+      utterance.rate = 1;
+      utterance.pitch = 1;
+      utterance.volume = 1;
+      speechSynthesis.cancel();
+      speechSynthesis.speak(utterance);
     }
   </script>
 </body>

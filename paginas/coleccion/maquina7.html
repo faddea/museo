@@ -3,34 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Legado de la Técnica - Museo Digital</title>
+  <title>Motores de Corriente Alterna - Museo Digital</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="icon" type="image/x-icon" href="/images.ico">
-    <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="m-0 p-0 font-sans">
 
   <section class="relative w-full h-screen overflow-hidden">
-    <img src="maquina7.jpeg" alt="Legado de la Técnica" class="absolute inset-0 w-full h-full object-cover brightness-75">
+    <img src="maquina7.jpeg" alt="Motores de Corriente Alterna" class="absolute inset-0 w-full h-full object-cover brightness-75">
     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
 
     <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-16 flex flex-col justify-center h-full text-white">
-      <h1 class="text-5xl font-extrabold mb-6 drop-shadow-lg">Legado de la Técnica</h1>
+      <h1 class="text-5xl font-extrabold mb-6 drop-shadow-lg">Motores de Corriente Alterna</h1>
 
-      <p class="text-lg leading-relaxed mb-5">
-        Esta sección combina elementos históricos con un mensaje simbólico: la transmisión del conocimiento a través del tiempo. Las máquinas expuestas y el busto de un educador representan el vínculo entre la enseñanza, la práctica y la innovación.
-      </p>
-
-      <p class="text-lg leading-relaxed mb-5">
-        La exposición busca reconocer a quienes dedicaron su vida a la educación técnica, fomentando valores como la precisión, la responsabilidad y la creatividad aplicada.
-      </p>
-
-      <p class="text-lg leading-relaxed mb-8">
-        El legado de estas generaciones continúa inspirando a nuevos estudiantes, recordando que la técnica y la ciencia son pilares del progreso social.
+      <p id="texto-info" class="text-lg leading-relaxed mb-8">
+        Los motores de corriente alterna marcaron un cambio fundamental en los talleres eléctricos. 
+        Utilizados para prácticas de conexión, medición y arranque trifásico, permitieron comprender la importancia de la energía rotativa 
+        en la automatización industrial. 
+        A través del estudio de su funcionamiento, los alumnos pudieron aplicar conceptos de magnetismo, rotor, estator y campo alterno, 
+        pilares del desarrollo técnico contemporáneo.
       </p>
 
       <div class="flex flex-wrap gap-4">
-        <button onclick="reproducirAudio()" class="flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition">
+        <button onclick="leerTexto()" class="flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition">
           🔊 Reproducir audio informativo
         </button>
         <a href="ampliacion_expo.html" class="bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition shadow-md">
@@ -40,14 +36,16 @@
     </div>
   </section>
 
-  <audio id="audioInfo">
-    <source src="audio_maquina7.mp3" type="audio/mpeg">
-    Tu navegador no soporta la reproducción de audio.
-  </audio>
-
   <script>
-    function reproducirAudio() {
-      document.getElementById('audioInfo').play();
+    function leerTexto() {
+      const texto = document.getElementById('texto-info').innerText;
+      const utterance = new SpeechSynthesisUtterance(texto);
+      utterance.lang = 'es-ES';
+      utterance.rate = 1;
+      utterance.pitch = 1;
+      utterance.volume = 1;
+      speechSynthesis.cancel();
+      speechSynthesis.speak(utterance);
     }
   </script>
 </body>

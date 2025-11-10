@@ -6,73 +6,29 @@
   <title>Colecciones - Museo Digital Avellaneda</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <link rel="icon" type="image/x-icon" href="/images.ico">
-    <link rel="stylesheet" href="/css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link rel="icon" type="image/x-icon" href="/images.ico">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="bg-white text-black font-serif" style="font-family: 'Lora', serif;">
 
- <!-- NAVBAR -->
-  <div id="navbar-placeholder"></div>
-  <script>
-    fetch("/navbar.html")
-      .then(response => {
-              if (!response.ok) {
-                  throw new Error('Error al cargar navbar.html');
-              }
-              return response.text();
-          })
-          .then(data => {
-            // 1. Insertar el HTML de la barra de navegación
-            document.getElementById("navbar-placeholder").innerHTML = data;
-
-            // 2. UNA VEZ INSERTADO, AÑADIR LA FUNCIONALIDAD DEL MENÚ
-
-            const menuButton = document.getElementById('menu-button');
-            const closeMenu = document.getElementById('close-menu');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const overlay = document.getElementById('overlay');
-
-            if (menuButton && mobileMenu) {
-                // Función para ABRIR el menú
-                menuButton.addEventListener('click', () => {
-                    mobileMenu.classList.remove('translate-x-full');
-                    overlay.classList.remove('hidden');
-                });
-
-                // Función para CERRAR el menú
-                const closeMenuFunction = () => {
-                    mobileMenu.classList.add('translate-x-full');
-                    overlay.classList.add('hidden');
-                };
-
-                closeMenu.addEventListener('click', closeMenuFunction);
-                overlay.addEventListener('click', closeMenuFunction);
-                
-                // Opcional: Cerrar menú al hacer clic en un enlace
-                document.querySelectorAll('#mobile-menu a').forEach(link => {
-                    link.addEventListener('click', closeMenuFunction);
-                });
-
-            } else {
-                 console.error("Los elementos del menú no se encontraron en el HTML cargado.");
-            }
-          })
-          .catch(error => {
-              console.error("Hubo un error cargando la navbar:", error);
-              // NOTA: Si ves este error, asegúrate de que estás ejecutando el 
-              // archivo a través de un servidor local (ej: Live Server de VS Code). 
-              // El 'fetch' no suele funcionar en archivos locales (file://).
-          });
-  </script>
+<!-- NAVBAR -->
+<div id="navbar-placeholder"></div>
+<script>
+  fetch("/navbar.html")
+    .then(r => r.text())
+    .then(data => {
+      document.getElementById("navbar-placeholder").innerHTML = data;
+    });
+</script>
 
 <!-- HERO -->
 <section class="text-center py-20 px-6 bg-gray-50 border-b border-gray-200 fade-up">
   <h2 class="text-5xl font-bold text-neutral-900 mb-6 tracking-tight">Colecciones del Museo Avellaneda</h2>
   <p class="max-w-3xl mx-auto text-gray-700 mb-6 text-lg">
-    Descubre nuestras exposiciones y colecciones que preservan la memoria, los proyectos y la evolución de la educación técnica a lo largo de los años.
+    Descubre nuestras exposiciones que representan la historia, la ciencia y la evolución técnica de la escuela.
   </p>
 </section>
 
@@ -80,29 +36,24 @@
 <section class="max-w-7xl mx-auto px-6 py-20 space-y-20 fade-section">
   <div class="text-center mb-12 fade-up">
     <h2 class="text-4xl font-bold text-neutral-900">Exposiciones Destacadas</h2>
-    <p class="text-gray-700 max-w-2xl mx-auto">Un recorrido por las muestras que marcan hitos en la historia de nuestra institución.</p>
+    <p class="text-gray-700 max-w-2xl mx-auto">Recorrido visual por las áreas temáticas que marcaron nuestra identidad técnica.</p>
   </div>
 
   <!-- EXPO 1 -->
   <div class="grid lg:grid-cols-2 gap-10 items-center fade-up">
     <div class="relative">
       <video src="03 (7).mp4" autoplay muted loop playsinline class="rounded-xl shadow-lg w-full h-[500px] object-cover"></video>
-      <span class="absolute top-4 left-4 bg-black text-white text-sm font-medium px-4 py-1 rounded-full shadow-md">Exposición Temporal</span>
+      <span class="absolute top-4 left-4 bg-black text-white text-sm font-medium px-4 py-1 rounded-full shadow-md">Exposición Técnica</span>
     </div>
     <div>
-      <h3 class="text-2xl font-bold mb-3">75 Años de Educación Técnica</h3>
-      <p class="text-gray-700 mb-4">Una exposición que recorre los momentos más importantes de nuestra escuela desde su fundación hasta la actualidad.</p>
-      <div class="grid grid-cols-2 gap-4 mb-4">
-        <div class="bg-gray-100 px-4 py-2 rounded-lg border border-gray-300 text-sm">Periodo: 1950 - 2025</div>
-        <div class="bg-gray-100 px-4 py-2 rounded-lg border border-gray-300 text-sm">Elementos: 650</div>
-      </div>
+      <h3 class="text-2xl font-bold mb-3">Tecnología Industrial y Mecánica de Precisión</h3>
+      <p class="text-gray-700 mb-4">Exposición dedicada a las herramientas, tornos, laminadoras y equipos industriales que fueron esenciales en la formación técnica y en la historia productiva de la escuela.</p>
       <ul class="list-disc list-inside text-gray-700 mb-6">
-        <li>Fotografías históricas</li>
-        <li>Documentos fundacionales</li>
-        <li>Testimonios de egresados</li>
+        <li>Máquinas industriales históricas</li>
+        <li>Instrumentos de medición mecánica</li>
+        <li>Equipos restaurados de taller</li>
       </ul>
       <a href="ampliacion_expo.html" class="bg-black text-white px-5 py-2 rounded-md hover:bg-gray-800 transition">Ver Exposición</a>
-
     </div>
   </div>
 
@@ -110,19 +61,15 @@
   <div class="grid lg:grid-cols-2 gap-10 items-center fade-up">
     <div class="relative order-1 lg:order-2">
       <video src="expo2.mp4" autoplay muted loop playsinline class="rounded-xl shadow-lg w-full h-[500px] object-cover"></video>
-      <span class="absolute top-4 left-4 bg-black text-white text-sm font-medium px-4 py-1 rounded-full shadow-md">Exposición Especial</span>
+      <span class="absolute top-4 left-4 bg-black text-white text-sm font-medium px-4 py-1 rounded-full shadow-md">Exposición Científica</span>
     </div>
     <div class="order-2 lg:order-1">
-      <h3 class="text-2xl font-bold mb-3">Revolución Digital en las Aulas</h3>
-      <p class="text-gray-700 mb-4">Cómo la tecnología transformó la enseñanza técnica: de los primeros equipos informáticos a la robótica educativa.</p>
-      <div class="grid grid-cols-2 gap-4 mb-4">
-        <div class="bg-gray-100 px-4 py-2 rounded-lg border border-gray-300 text-sm">Periodo: 1985 - 2025</div>
-        <div class="bg-gray-100 px-4 py-2 rounded-lg border border-gray-300 text-sm">Elementos: 450</div>
-      </div>
+      <h3 class="text-2xl font-bold mb-3">Ciencia, Electricidad y Física Aplicada</h3>
+      <p class="text-gray-700 mb-4">Muestra de los instrumentos científicos utilizados en los laboratorios técnicos, que fomentaron la experimentación y el aprendizaje práctico en física y electricidad.</p>
       <ul class="list-disc list-inside text-gray-700 mb-6">
-        <li>Equipos computacionales históricos</li>
-        <li>Proyectos de innovación técnica</li>
-        <li>Educación digital</li>
+        <li>Equipos de medición eléctrica</li>
+        <li>Instrumentos de laboratorio</li>
+        <li>Experimentos de energía y magnetismo</li>
       </ul>
       <a href="ampliacion_expo2.html" class="bg-black text-white px-5 py-2 rounded-md hover:bg-gray-800 transition">Ver Exposición</a>
     </div>
@@ -132,19 +79,15 @@
   <div class="grid lg:grid-cols-2 gap-10 items-center fade-up">
     <div class="relative">
       <video src="expo3.mp4" autoplay muted loop playsinline class="rounded-xl shadow-lg w-full h-[500px] object-cover"></video>
-      <span class="absolute top-4 left-4 bg-black text-white text-sm font-medium px-4 py-1 rounded-full shadow-md">Exposición Temporal</span>
+      <span class="absolute top-4 left-4 bg-black text-white text-sm font-medium px-4 py-1 rounded-full shadow-md">Exposición Informática</span>
     </div>
     <div>
-      <h3 class="text-2xl font-bold mb-3">Pioneras de la Técnica</h3>
-      <p class="text-gray-700 mb-4">Historias inspiradoras de las mujeres que abrieron camino en la educación técnica y dejaron huella en nuestra escuela.</p>
-      <div class="grid grid-cols-2 gap-4 mb-4">
-        <div class="bg-gray-100 px-4 py-2 rounded-lg border border-gray-300 text-sm">Periodo: 1970 - 2025</div>
-        <div class="bg-gray-100 px-4 py-2 rounded-lg border border-gray-300 text-sm">Testimonios: 300</div>
-      </div>
+      <h3 class="text-2xl font-bold mb-3">Historia de la Informática y la Electrónica</h3>
+      <p class="text-gray-700 mb-4">Colección que muestra los avances tecnológicos en el campo de la electrónica y la programación, con placas, procesadores y equipos emblemáticos que formaron parte de la enseñanza técnica.</p>
       <ul class="list-disc list-inside text-gray-700 mb-6">
-        <li>Fotografías históricas</li>
-        <li>Entrevistas audiovisuales</li>
-        <li>Reconocimientos institucionales</li>
+        <li>Componentes electrónicos históricos</li>
+        <li>Computadoras educativas</li>
+        <li>Material tecnológico restaurado</li>
       </ul>
       <a href="ampliacion_expo3.html" class="bg-black text-white px-5 py-2 rounded-md hover:bg-gray-800 transition">Ver Exposición</a>
     </div>
@@ -153,54 +96,18 @@
   <!-- EXPO 4 -->
   <div class="grid lg:grid-cols-2 gap-10 items-center fade-up">
     <div class="order-2 lg:order-1">
-      <h3 class="text-2xl font-bold mb-3">Ingenio Mecánico y Creatividad</h3>
-      <p class="text-gray-700 mb-4">Una mirada a los mecanismos y herramientas desarrollados en los talleres técnicos a lo largo de los años.</p>
-      <div class="grid grid-cols-2 gap-4 mb-4">
-        <div class="bg-gray-100 px-4 py-2 rounded-lg border border-gray-300 text-sm">Periodo: 2010 - 2025</div>
-        <div class="bg-gray-100 px-4 py-2 rounded-lg border border-gray-300 text-sm">Proyectos: 220</div>
-      </div>
+      <h3 class="text-2xl font-bold mb-3">Innovación Educativa y Recursos Audiovisuales</h3>
+      <p class="text-gray-700 mb-4">Una mirada a los materiales y dispositivos audiovisuales que transformaron la enseñanza técnica, integrando nuevas metodologías y medios visuales de aprendizaje.</p>
       <ul class="list-disc list-inside text-gray-700 mb-6">
-        <li>Desarrollo de robots educativos</li>
-        <li>Aplicaciones con sensores</li>
-        <li>Prototipos de automatización</li>
+        <li>Proyectores y material didáctico</li>
+        <li>Recursos audiovisuales históricos</li>
+        <li>Equipos de divulgación técnica</li>
       </ul>
       <a href="ampliacion_expo4.html" class="bg-black text-white px-5 py-2 rounded-md hover:bg-gray-800 transition">Ver Exposición</a>
     </div>
     <div class="relative order-1 lg:order-2">
       <video src="1109.mp4" autoplay muted loop playsinline class="rounded-xl shadow-lg w-full h-[500px] object-cover"></video>
       <span class="absolute top-4 left-4 bg-black text-white text-sm font-medium px-4 py-1 rounded-full shadow-md">Exposición de Innovación</span>
-    </div>
-  </div>
-</section>
-
-<!-- COLECCIONES DESTACADAS -->
-<section class="text-center py-16 px-4 bg-gradient-to-b from-white to-gray-100 border-t border-gray-200 fade-section">
-  <h2 class="text-4xl font-bold mb-4 text-neutral-900">Colecciones Destacadas</h2>
-  <p class="max-w-2xl mx-auto text-gray-700 mb-12">Explora nuestras colecciones temáticas que resaltan los valores y la historia del Museo Avellaneda.</p>
-  <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
-    <div class="bg-white shadow-lg rounded-xl overflow-hidden border border-gray-200">
-      <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?q=80&w=800" alt="Evolución Tecnológica" class="w-full h-48 object-cover">
-      <div class="p-6">
-        <h3 class="text-lg font-semibold mb-2">Evolución Tecnológica</h3>
-        <p class="text-gray-600 mb-3">La transformación de las herramientas técnicas a lo largo de las décadas.</p>
-        <a href="colecciones.html" class="text-black font-medium hover:underline">Explorar Colección →</a>
-      </div>
-    </div>
-    <div class="bg-white shadow-lg rounded-xl overflow-hidden border border-gray-200">
-      <img src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=800" alt="Generaciones de Egresados" class="w-full h-48 object-cover">
-      <div class="p-6">
-        <h3 class="text-lg font-semibold mb-2">Generaciones de Egresados</h3>
-        <p class="text-gray-600 mb-3">Fotografías y recuerdos de las promociones que pasaron por nuestras aulas.</p>
-        <a href="colecciones.html" class="text-black font-medium hover:underline">Explorar Colección →</a>
-      </div>
-    </div>
-    <div class="bg-white shadow-lg rounded-xl overflow-hidden border border-gray-200">
-      <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=800" alt="Vida Estudiantil" class="w-full h-48 object-cover">
-      <div class="p-6">
-        <h3 class="text-lg font-semibold mb-2">Vida Estudiantil</h3>
-        <p class="text-gray-600 mb-3">Proyectos, talleres y momentos que forman parte del día a día institucional.</p>
-        <a href="colecciones.html" class="text-black font-medium hover:underline">Explorar Colección →</a>
-      </div>
     </div>
   </div>
 </section>
