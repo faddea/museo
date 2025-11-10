@@ -55,20 +55,36 @@
 
   <!-- Script de audio -->
   <script>
-    const botonAudio = document.getElementById("audioBtn");
-    const texto = `
-      La placa base, también conocida como tarjeta madre, surgió en los años cincuenta 
-      como el eje central que conecta todos los componentes de una computadora. 
-      Junto a los microchips, permitió reducir el tamaño y aumentar la velocidad de los equipos. 
-      Esta tecnología marcó una nueva era en la enseñanza de la informática y la electrónica técnica.
-    `;
-    botonAudio.addEventListener("click", () => {
-      const mensaje = new SpeechSynthesisUtterance(texto);
-      mensaje.lang = "es-ES";
-      mensaje.rate = 1;
-      speechSynthesis.cancel();
-      speechSynthesis.speak(mensaje);
-    });
+    function reproducirTexto(texto) {
+  const mensaje = new SpeechSynthesisUtterance(texto);
+  mensaje.lang = "es-ES";
+
+  const voces = speechSynthesis.getVoices();
+  if (voces.length > 0) {
+    const voz = voces.find(v => v.lang.startsWith("es")) || voces[0];
+    mensaje.voice = voz;
+  }
+
+  mensaje.rate = 1;
+  speechSynthesis.cancel();
+  speechSynthesis.speak(mensaje);
+}
+
+document.getElementById("audioBtn").addEventListener("click", () => {
+  const texto = `
+    La placa base, también conocida como tarjeta madre, surgió en los años cincuenta 
+    como el eje central que conecta todos los componentes de una computadora. 
+    Junto a los microchips, permitió reducir el tamaño y aumentar la velocidad de los equipos. 
+    Esta tecnología marcó una nueva era en la enseñanza de la informática y la electrónica técnica.
+  `;
+  if (speechSynthesis.getVoices().length === 0) {
+    // Esperar a que se carguen las voces
+    speechSynthesis.onvoiceschanged = () => reproducirTexto(texto);
+  } else {
+    reproducirTexto(texto);
+  }
+});
+
   </script>
 
 </body>
